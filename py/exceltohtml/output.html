@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Excel to HTML</title>
+<style>
+body { font-size: 10px; }
+table { border-collapse: collapse; }
+table { border-collapse: collapse }
+th, td{ border: 1px solid #434242; padding: 8px; text-align: left; }
+th { background-color: #fffefe; font-weight: bold; }
+.merged { background-color: #f0f0f0; }
+</style>
+</head>
+<body class="p-4 font-sans bg-gray-100">
+<div id="formContent" class="max-w-3xl mx-auto bg-white p-4 shadow-md">
+<table  class="w-full mb-3 text-xs">
+<tr>
+<th></th>
+<td class="merged" rowspan="3" colspan="11">FORMATOS DE INSPECCIÓN DE VEHÍCULOS</td>
+</tr>
+<tr>
+<td></td>
+</tr>
+<tr>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td class="merged" rowspan="1" colspan="11">FORMATOS DE INSPECCIÓN DE VEHÍCULOS</td>
+</tr>
+<tr>
+<td></td>
+<td class="merged" rowspan="1" colspan="5">Zona: Comercial Mérida</td>
+<td class="merged" rowspan="1" colspan="6">Centro de Trabajo: Oficinas Zona Comercial Mérida</td>
+</tr>
+<tr>
+<td></td>
+<td class="merged" rowspan="1" colspan="3">No. Economico: </td>
+<td class="merged" rowspan="1" colspan="3">No. Placas:
+A</td>
+<td>Fecha:</td>
+<td class="merged" rowspan="1" colspan="4">=(TODAY())</td>
+</tr>
+<tr>
+<td></td>
+<td class="merged" rowspan="1" colspan="4">Tipo de Vehiculo: </td>
+<td class="merged" rowspan="1" colspan="4">Responsable: </td>
+<td class="merged" rowspan="1" colspan="3">RPE: </td>
+</tr>
+<tr>
+<td></td>
+<td class="merged" rowspan="1" colspan="6">Kilometraje y fecha del ultimo mantto.:</td>
+<td class="merged" rowspan="1" colspan="5">Kilometraje actual: </td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td class="merged" rowspan="1" colspan="3">1.- Seguridad en Vehiculo</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td class="merged" rowspan="1" colspan="4">Observaciones</td>
+</tr>
+<tr>
+<td></td>
+<td>5</td>
+<td>0</td>
+<td class="merged" rowspan="1" colspan="4">Extintor (En buen estado, vigente y bien resguardado)</td>
+<td></td>
+<td class="merged" rowspan="1" colspan="4"></td>
+</tr>
+<tr>
+<td></td>
+<td>5</td>
+<td>5</td>
+<td class="merged" rowspan="1" colspan="4">Botiquín (Buen estado, listado de materiales y suficiente)</td>
+<td></td>
+<td class="merged" rowspan="1" colspan="4"></td>
+</tr>
+<tr>
+<td></td>
+<td>5</td>
+<td>5</td>
+<td class="merged" rowspan="1" colspan="4">Cinturones de Seguridad (Buen estado)</td>
+<td></td>
+<td class="merged" rowspan="1" colspan="4"></td>
+</tr>
+<tr>
+<td></td>
+<td>5</td>
+<td>5</td>
+<td class="merged" rowspan="1" colspan="4">Luces (Intermitentes, direccionales)</td>
+<td></td>
+<td class="merged" rowspan="1" colspan="4"></td>
+</tr>
+<tr>
+<td></td>
+<td>5</td>
+<td>3</td>
+<td class="merged" rowspan="1" colspan="4">Llantas traseras y delanteras (Buen estado, con refaccion)</td>
+<td></td>
+<td class="merged" rowspan="1" colspan="4"></td>
+</tr>
+<tr>
+<td></td>
+<td>5</td>
+<td>5</td>
+<td class="merged" rowspan="1" colspan="4">Frenos de pie y de estacionamiento (Buen estado)</td>
+<td></td>
+<td class="merged" rowspan="1" colspan="4"></td>
+</tr>
+<tr>
+<td></td>
+<td>5</td>
+<td>5</td>
+<td class="merged" rowspan="1" colspan="4">Odómetro</td>
+<td></td>
+<td class="merged" rowspan="1" colspan="4"></td>
+</tr>
+<tr>
+<td></td>
+<td>5</td>
+<td>5</td>
+<td class="merged" rowspan="1" colspan="4">Tacómetro</td>
+<td></td>
+<td class="merged" rowspan="1" colspan="4"></td>
+</tr>
+<tr>
+<td></td>
+<td>5</td>
+<td>5</td>
+<td class="merged" rowspan="1" colspan="4">Espejos retrovisores (Buen estado)</td>
+<td></td>
+<td class="merged" rowspan="1" colspan="4"></td>
+</tr>
+<tr>
+<td></td>
+<td>=SUM(B11:B19)</td>
+<td>=SUM(C11:C19)</td>
+<td class="merged" rowspan="1" colspan="4">Total de puntos</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td class="merged" rowspan="1" colspan="3">2.- Orden y Limpieza en Vehiculos</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td class="merged" rowspan="1" colspan="4">Observaciones</td>
+</tr>
+<tr>
+<td></td>
+<td>5</td>
+<td>0</td>
+<td class="merged" rowspan="1" colspan="4">Cabinas (Limpia, ordenada y en buen estado)</td>
+<td></td>
+<td class="merged" rowspan="1" colspan="4"></td>
+</tr>
+<tr>
+<td></td>
+<td>5</td>
+<td>3</td>
+<td class="merged" rowspan="1" colspan="4">Cajuela (Limpia, ordenada, libre de materiales)</td>
+<td></td>
+<td class="merged" rowspan="1" colspan="4"></td>
+</tr>
+<tr>
+<td></td>
+<td>=SUM(B23:B24)</td>
+<td>=SUM(C23:C24)</td>
+<td class="merged" rowspan="1" colspan="4">Total de puntos</td>
+<td></td>
+<td class="merged" rowspan="1" colspan="4"></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td class="merged" rowspan="1" colspan="3">3.- Mantenimiento de Vehiculos</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td class="merged" rowspan="1" colspan="4">Observaciones</td>
+</tr>
+<tr>
+<td></td>
+<td>5</td>
+<td>1</td>
+<td class="merged" rowspan="1" colspan="4">Mantenimiento de vehiculos (Bitacora Prog. Y Real)</td>
+<td></td>
+<td class="merged" rowspan="1" colspan="4"></td>
+</tr>
+<tr>
+<td></td>
+<td>5</td>
+<td>5</td>
+<td>Poliza de Seguro</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>5</td>
+<td>5</td>
+<td class="merged" rowspan="1" colspan="4">Placas (Frontal y trasera en buen estado) y Tarjeta de Circulación</td>
+<td></td>
+<td class="merged" rowspan="1" colspan="4"></td>
+</tr>
+<tr>
+<td></td>
+<td>5</td>
+<td>2</td>
+<td class="merged" rowspan="1" colspan="4">Carroceria (Puertas, cofre, fender, libres de golpes y buen estado)</td>
+<td></td>
+<td class="merged" rowspan="1" colspan="4"></td>
+</tr>
+<tr>
+<td></td>
+<td>5</td>
+<td>5</td>
+<td class="merged" rowspan="1" colspan="4">Niveles (aceite, frenos, anticogelante, direccion h., limpia parabrisas)</td>
+<td></td>
+<td class="merged" rowspan="1" colspan="4"></td>
+</tr>
+<tr>
+<td></td>
+<td>=SUM(B30:B34)</td>
+<td>=SUM(C30:C34)</td>
+<td class="merged" rowspan="1" colspan="4">Total de puntos</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td class="merged" rowspan="1" colspan="3">4.- Equipos y Herramientas de Trabajo</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td class="merged" rowspan="1" colspan="4">Observaciones</td>
+</tr>
+<tr>
+<td></td>
+<td>3</td>
+<td></td>
+<td class="merged" rowspan="1" colspan="4">Llave para tuerca de llantas</td>
+<td></td>
+<td class="merged" rowspan="1" colspan="4"></td>
+</tr>
+<tr>
+<td></td>
+<td>3</td>
+<td></td>
+<td class="merged" rowspan="1" colspan="4">Triangulos reflectantes</td>
+<td></td>
+<td class="merged" rowspan="1" colspan="4"></td>
+</tr>
+<tr>
+<td></td>
+<td>3</td>
+<td></td>
+<td class="merged" rowspan="1" colspan="4">Gato hidráulico o de tornillo</td>
+<td></td>
+<td class="merged" rowspan="1" colspan="4"></td>
+</tr>
+<tr>
+<td></td>
+<td>3</td>
+<td></td>
+<td>Lampara de mano</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td class="merged" rowspan="1" colspan="4"></td>
+</tr>
+<tr>
+<td></td>
+<td>3</td>
+<td></td>
+<td>Cables pasa corrientes</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td class="merged" rowspan="1" colspan="4"></td>
+</tr>
+<tr>
+<td></td>
+<td>3</td>
+<td></td>
+<td>Juego de desarmadores  </td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td class="merged" rowspan="1" colspan="4"></td>
+</tr>
+<tr>
+<td></td>
+<td>2</td>
+<td></td>
+<td>Llave perica</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td class="merged" rowspan="1" colspan="4"></td>
+</tr>
+<tr>
+<td></td>
+<td>=SUM(B39:B45)</td>
+<td></td>
+<td class="merged" rowspan="1" colspan="4">Total de puntos</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td class="merged" rowspan="1" colspan="4"></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td class="merged" rowspan="1" colspan="4">REVISÓ NOMBRE FIRMA Y RPE</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td class="merged" rowspan="1" colspan="4"></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td class="merged" rowspan="1" colspan="11">USUARIO DEL VEHÍCULO OFICIAL FIRMA Y RPE                                                                                                     ADMINISTRADOR DE PV RPE</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td class="merged" rowspan="1" colspan="2"></td>
+<td></td>
+<td></td>
+<td></td>
+<td class="merged" rowspan="1" colspan="4">Lic. Noemí Guadalupe Chan Couoh - GEYK8</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td class="merged" rowspan="1" colspan="2">PUNTOS OBTENIDOS</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td class="merged" rowspan="2" colspan="2">=SUM(C20,C25,C35,C46)</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</table>
+</div>
+</body>
+</html>

@@ -1,0 +1,984 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulario PDF a HTML</title>
+    <style>
+        body { font-family: Arial, sans-serif; position: relative; margin: 0; }
+        .pdf-text { position: absolute; }
+        .pdf-field { position: absolute; border: 1px solid #ccc; box-sizing: border-box; }
+        .pdf-image { position: absolute; }
+        .pdf-line { position: absolute; } /* Color se define inline */
+    </style>
+</head>
+<body>
+    
+        
+            <div class="pdf-text" style="left: 155.1046036529541px; top: 31.720467529296876px; font-size: 11.0px; font-family: 'Calibri', Arial; color: rgb(0, 0, 0);">
+                LISTADO DE OPERACION DE LAS OFICINAS DE SERVICIOS Y ATENCION AL CLIENTE
+            </div>
+        
+    
+        
+            <div class="pdf-text" style="left: 26.99899898529053px; top: 144.97px; font-size: 10.0px; font-family: 'Calibri-Bold', Arial; color: rgb(0, 0, 0);">
+                FECHA DE VERIFICACION: 
+            </div>
+        
+    
+        
+            <div class="pdf-text" style="left: 26.99899898529053px; top: 162.26000000000002px; font-size: 10.0px; font-family: 'Calibri', Arial; color: rgb(0, 0, 0);">
+                NOMBRE DEL RESPONSABLE:_________________________________________________
+            </div>
+        
+    
+        
+            <div class="pdf-text" style="left: 26.99899898529053px; top: 179.55px; font-size: 10.0px; font-family: 'Calibri', Arial; color: rgb(0, 0, 0);">
+                NOMBRE DE LA OFICINA DE ATENCION:_________________________________________
+            </div>
+        
+    
+        
+            <div class="pdf-text" style="left: 26.99899898529053px; top: 196.84px; font-size: 10.0px; font-family: 'Calibri', Arial; color: rgb(0, 0, 0);">
+                TIPO DE OFICINA DE ATENCION:
+            </div>
+        
+    
+        
+            <div class="pdf-text" style="left: 26.99899898529053px; top: 230.92790649414064px; font-size: 10.0px; font-family: 'Calibri', Arial; color: rgb(0, 0, 0);">
+                CAC
+            </div>
+        
+    
+        
+            <div class="pdf-text" style="left: 175.58660568237306px; top: 230.92790649414064px; font-size: 10.0px; font-family: 'Calibri', Arial; color: rgb(0, 0, 0);">
+                CAA
+            </div>
+        
+    
+        
+            <div class="pdf-text" style="left: 316.84589431762697px; top: 230.92790649414064px; font-size: 10.0px; font-family: 'Calibri', Arial; color: rgb(0, 0, 0);">
+                OAE
+            </div>
+        
+    
+        
+            <div class="pdf-text" style="left: 465.83250000000004px; top: 230.92790649414064px; font-size: 10.0px; font-family: 'Calibri', Arial; color: rgb(0, 0, 0);">
+                MOD(CON PERSONALIZADA)
+            </div>
+        
+    
+        
+            <div class="pdf-text" style="left: 26.99899898529053px; top: 266.29256103515627px; font-size: 10.0px; font-family: 'Calibri', Arial; color: rgb(0, 0, 0);">
+                CAV
+            </div>
+        
+    
+        
+            <div class="pdf-text" style="left: 175.58660568237306px; top: 266.29256103515627px; font-size: 10.0px; font-family: 'Calibri', Arial; color: rgb(0, 0, 0);">
+                CAB
+            </div>
+        
+    
+        
+            <div class="pdf-text" style="left: 324.81260162353516px; top: 266.29256103515627px; font-size: 10.0px; font-family: 'Calibri', Arial; color: rgb(0, 0, 0);">
+                ISL
+            </div>
+        
+    
+        
+            <div class="pdf-text" style="left: 465.83250000000004px; top: 266.29256103515627px; font-size: 10.0px; font-family: 'Calibri', Arial; color: rgb(0, 0, 0);">
+                MOD (SIN PERSONALIZADA)
+            </div>
+        
+    
+        
+            <div class="pdf-text" style="left: 175.58660568237306px; top: 303.67892272949223px; font-size: 10.0px; font-family: 'Calibri-Bold', Arial; color: rgb(255, 255, 255);">
+                DESCRIPCIÓN.
+            </div>
+        
+    
+        
+            <div class="pdf-text" style="left: 502.27449188232424px; top: 303.67892272949223px; font-size: 10.0px; font-family: 'Calibri-Bold', Arial; color: rgb(255, 255, 255);">
+                SI
+            </div>
+        
+    
+        
+            <div class="pdf-text" style="left: 584.5084146118164px; top: 303.67892272949223px; font-size: 10.0px; font-family: 'Calibri-Bold', Arial; color: rgb(255, 255, 255);">
+                NO
+            </div>
+        
+    
+        
+            <div class="pdf-text" style="left: 668.2984146118165px; top: 303.67892272949223px; font-size: 10.0px; font-family: 'Calibri-Bold', Arial; color: rgb(255, 255, 255);">
+                N/A
+            </div>
+        
+    
+        
+            <div class="pdf-text" style="left: 26.99899898529053px; top: 480.5688821411133px; font-size: 10.0px; font-family: 'Calibri', Arial; color: rgb(0, 0, 0);">
+                Rampas en buen estado (limpias, pintadas y sin obstruccion)
+            </div>
+        
+    
+        
+            <div class="pdf-text" style="left: 26.99899898529053px; top: 497.8854675292969px; font-size: 10.0px; font-family: 'Calibri', Arial; color: rgb(0, 0, 0);">
+                Salida de emergencia sin obstruccion y en buen estado
+            </div>
+        
+    
+        
+            <div class="pdf-text" style="left: 26.99899898529053px; top: 546.5634756469727px; font-size: 10.0px; font-family: 'Calibri', Arial; color: rgb(0, 0, 0);">
+                Horario de atencion a la vista y en buen estado
+            </div>
+        
+    
+        
+            <div class="pdf-text" style="left: 26.99899898529053px; top: 757.1025000000001px; font-size: 10.0px; font-family: 'Calibri', Arial; color: rgb(0, 0, 0);">
+                Cables ordenados y encintados.
+            </div>
+        
+    
+        
+            <div class="pdf-text" style="left: 26.99899898529053px; top: 968.612357788086px; font-size: 10.0px; font-family: 'Calibri', Arial; color: rgb(0, 0, 0);">
+                Verificar que los equipos esten identificados (numero de CFEmatico)
+            </div>
+        
+    
+        
+            <div class="pdf-text" style="left: 26.99899898529053px; top: 878.1591259765626px; font-size: 10.0px; font-family: 'Calibri', Arial; color: rgb(0, 0, 0);">
+                Pintura en buenas condiciones (libre de manchas, rallones, humedad).
+            </div>
+        
+    
+        
+            <div class="pdf-text" style="left: 26.99899898529053px; top: 897.3243902587891px; font-size: 10.0px; font-family: 'Calibri', Arial; color: rgb(0, 0, 0);">
+                Cristales limpios y en buenas condiciones (ventanales, ventanas, puertas de 
+            </div>
+        
+    
+        
+            <div class="pdf-text" style="left: 26.99899898529053px; top: 914.8804064941406px; font-size: 10.0px; font-family: 'Calibri', Arial; color: rgb(0, 0, 0);">
+                acceso).
+            </div>
+        
+    
+        
+            <div class="pdf-text" style="left: 26.99899898529053px; top: 934.032357788086px; font-size: 10.0px; font-family: 'Calibri', Arial; color: rgb(0, 0, 0);">
+                Pisos limpios, sin grietas, no rotos.
+            </div>
+        
+    
+        
+            <div class="pdf-text" style="left: 26.99899898529053px; top: 951.322357788086px; font-size: 10.0px; font-family: 'Calibri', Arial; color: rgb(0, 0, 0);">
+                Verificar plafones, libre de escurrimientos, manchas y bien colocados.
+            </div>
+        
+    
+        
+            <div class="pdf-text" style="left: 26.99899898529053px; top: 985.8957012939454px; font-size: 10.0px; font-family: 'Calibri-Bold', Arial; color: rgb(0, 0, 0);">
+                SEGURIDAD
+            </div>
+        
+    
+        
+            <div class="pdf-text" style="left: 26.99899898529053px; top: 1003.451717529297px; font-size: 10.0px; font-family: 'Calibri', Arial; color: rgb(0, 0, 0);">
+                Extintores cargados y vigentes en área de cfemáticos, oficinas  y atención a 
+            </div>
+        
+    
+        
+            <div class="pdf-text" style="left: 26.99899898529053px; top: 1021.0077337646485px; font-size: 10.0px; font-family: 'Calibri', Arial; color: rgb(0, 0, 0);">
+                clientes.
+            </div>
+        
+    
+        
+            <div class="pdf-text" style="left: 26.99899898529053px; top: 653.3625000000001px; font-size: 10.0px; font-family: 'Calibri', Arial; color: rgb(0, 0, 0);">
+                Pisos limpios, sin grietas, no rotos.
+            </div>
+        
+    
+        
+            <div class="pdf-text" style="left: 26.99899898529053px; top: 670.6525px; font-size: 10.0px; font-family: 'Calibri', Arial; color: rgb(0, 0, 0);">
+                Señalamientos visibles y en buen estado para clientes (horarios de atención, 
+            </div>
+        
+    
+        
+            <div class="pdf-text" style="left: 26.99899898529053px; top: 687.9425px; font-size: 10.0px; font-family: 'Calibri', Arial; color: rgb(0, 0, 0);">
+                Escritorio ordenados y limpios.
+            </div>
+        
+    
+        
+            <div class="pdf-text" style="left: 26.99899898529053px; top: 705.2325000000001px; font-size: 10.0px; font-family: 'Calibri', Arial; color: rgb(0, 0, 0);">
+                Baños limpios y sin fugas de agua.
+            </div>
+        
+    
+        
+            <div class="pdf-text" style="left: 26.99899898529053px; top: 722.5225px; font-size: 10.0px; font-family: 'Calibri', Arial; color: rgb(0, 0, 0);">
+                Verificar plafones, libre de escurrimientos, manchas y bien colocados.
+            </div>
+        
+    
+        
+            <div class="pdf-text" style="left: 26.99899898529053px; top: 739.8125px; font-size: 10.0px; font-family: 'Calibri', Arial; color: rgb(0, 0, 0);">
+                Luminaria adecuada y en funcionamiento.
+            </div>
+        
+    
+        
+            <div class="pdf-text" style="left: 26.99899898529053px; top: 774.4323577880859px; font-size: 10.0px; font-family: 'Calibri', Arial; color: rgb(0, 0, 0);">
+                Lamparas y/o focos en buen estdo ( no fundidos)
+            </div>
+        
+    
+        
+            <div class="pdf-text" style="left: 26.99899898529053px; top: 791.7091259765625px; font-size: 10.0px; font-family: 'Calibri', Arial; color: rgb(0, 0, 0);">
+                Aire acondicionado funcionando y en buen estado
+            </div>
+        
+    
+        
+            <div class="pdf-text" style="left: 26.99899898529053px; top: 808.9991259765626px; font-size: 10.0px; font-family: 'Calibri', Arial; color: rgb(0, 0, 0);">
+                Campañas publicitarias vigentes (acrilico, nanners, pantallas)
+            </div>
+        
+    
+        
+            <div class="pdf-text" style="left: 26.99899898529053px; top: 826.3023577880859px; font-size: 10.0px; font-family: 'Calibri', Arial; color: rgb(0, 0, 0);">
+                En el area de clientes se encuentran y/o propaganda no vigente ( retirarlo)
+            </div>
+        
+    
+        
+            <div class="pdf-text" style="left: 26.99899898529053px; top: 860.882357788086px; font-size: 10.0px; font-family: 'Calibri', Arial; color: rgb(0, 0, 0);">
+                Pantalla en buenas condiciones
+            </div>
+        
+    
+        
+            <div class="pdf-text" style="left: 26.99899898529053px; top: 320.569857788086px; font-size: 10.0px; font-family: 'Calibri-Bold', Arial; color: rgb(0, 0, 0);">
+                EXTERIOR
+            </div>
+        
+    
+        
+            <div class="pdf-text" style="left: 26.99899898529053px; top: 337.8465447998047px; font-size: 10.0px; font-family: 'Calibri', Arial; color: rgb(0, 0, 0);">
+                Pintura en buenas condiciones (libre de manchas, rallones, humedad).
+            </div>
+        
+    
+        
+            <div class="pdf-text" style="left: 26.99899898529053px; top: 353.42087402343753px; font-size: 10.0px; font-family: 'Calibri', Arial; color: rgb(0, 0, 0);">
+                Áreas de jardínes en buenas condiciones, plantas libre de plagas, pasto podado 
+            </div>
+        
+    
+        
+            <div class="pdf-text" style="left: 26.99899898529053px; top: 370.9635772705078px; font-size: 10.0px; font-family: 'Calibri', Arial; color: rgb(0, 0, 0);">
+                y limpio.
+            </div>
+        
+    
+        
+            <div class="pdf-text" style="left: 26.99899898529053px; top: 391.19290649414063px; font-size: 10.0px; font-family: 'Calibri', Arial; color: rgb(0, 0, 0);">
+                Luminarias en buen estado (limpio, no roto, sin daño).
+            </div>
+        
+    
+        
+            <div class="pdf-text" style="left: 26.99899898529053px; top: 843.592357788086px; font-size: 10.0px; font-family: 'Calibri-Bold', Arial; color: rgb(0, 0, 0);">
+                AREA DE CFEMATICOS
+            </div>
+        
+    
+        
+            <div class="pdf-text" style="left: 26.99899898529053px; top: 445.44357727050783px; font-size: 10.0px; font-family: 'Calibri', Arial; color: rgb(0, 0, 0);">
+                Banquetas, estacionamiento y rampas en buen estado (limpias, pintadas, sin 
+            </div>
+        
+    
+        
+            <div class="pdf-text" style="left: 26.99899898529053px; top: 463.01286590576177px; font-size: 10.0px; font-family: 'Calibri', Arial; color: rgb(0, 0, 0);">
+                burbujas y sin obstrucción, libre de vendedores ambulantes).
+            </div>
+        
+    
+        
+            <div class="pdf-text" style="left: 26.99899898529053px; top: 411.80790649414064px; font-size: 10.0px; font-family: 'Calibri', Arial; color: rgb(0, 0, 0);">
+                Cristales limpios y en buenas condiciones (ventanales, ventanas, puertas de 
+            </div>
+        
+    
+        
+            <div class="pdf-text" style="left: 26.99899898529053px; top: 429.3638821411133px; font-size: 10.0px; font-family: 'Calibri', Arial; color: rgb(0, 0, 0);">
+                acceso).
+            </div>
+        
+    
+        
+            <div class="pdf-text" style="left: 26.99899898529053px; top: 513.4464837646485px; font-size: 10.0px; font-family: 'Calibri', Arial; color: rgb(0, 0, 0);">
+                Señalamientos para clientes en buen estado (horarios de atención, señales de 
+            </div>
+        
+    
+        
+            <div class="pdf-text" style="left: 26.99899898529053px; top: 531.0025px; font-size: 10.0px; font-family: 'Calibri', Arial; color: rgb(0, 0, 0);">
+                protección civil, etc.).
+            </div>
+        
+    
+        
+            <div class="pdf-text" style="left: 26.99899898529053px; top: 563.8534756469727px; font-size: 10.0px; font-family: 'Calibri-Bold', Arial; color: rgb(0, 0, 0);">
+                INTERIOR
+            </div>
+        
+    
+        
+            <div class="pdf-text" style="left: 26.99899898529053px; top: 581.1434756469727px; font-size: 10.0px; font-family: 'Calibri', Arial; color: rgb(0, 0, 0);">
+                Pintura en buenas condiciones (libre de manchas, rallones, humedad).
+            </div>
+        
+    
+        
+            <div class="pdf-text" style="left: 26.99899898529053px; top: 599.7634756469727px; font-size: 10.0px; font-family: 'Calibri', Arial; color: rgb(0, 0, 0);">
+                Cristales limpios y en buenas condiciones (ventanales, ventanas, puertas de 
+            </div>
+        
+    
+        
+            <div class="pdf-text" style="left: 26.99899898529053px; top: 617.3194918823242px; font-size: 10.0px; font-family: 'Calibri', Arial; color: rgb(0, 0, 0);">
+                acceso).
+            </div>
+        
+    
+        
+            <div class="pdf-text" style="left: 26.99899898529053px; top: 636.0725px; font-size: 10.0px; font-family: 'Calibri', Arial; color: rgb(0, 0, 0);">
+                Mobiliario en buen estado (adecuado, no roto, limpio, no rallado).
+            </div>
+        
+    
+        
+            <img class="pdf-image" src="data:image/png;base64,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"
+                 style="left: 250.04000000000002px; top: 133.0px; width: 250.04000000000002px; height: 133.0px;">
+        
+    
+        
+            <img class="pdf-image" src="data:image/png;base64,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"
+                 style="left: 243.39000000000001px; top: 194.18px; width: 243.39000000000001px; height: 194.18px;">
+        
+    
+        
+            <div class="pdf-line" style="left: 462.84000000000003px; top: 336.05107727050785px; width: 1px; height: 225.87392272949222px; background-color: black;"></div>
+        
+    
+        
+            <div class="pdf-line" style="left: 549.050609741211px; top: 336.05107727050785px; width: 1px; height: 225.87392272949222px; background-color: black;"></div>
+        
+    
+        
+            <div class="pdf-line" style="left: 635.2479064941407px; top: 336.05107727050785px; width: 1px; height: 225.87392272949222px; background-color: black;"></div>
+        
+    
+        
+            <div class="pdf-line" style="left: 462.84000000000003px; top: 579.3479675292969px; width: 1px; height: 262.3158740234376px; background-color: black;"></div>
+        
+    
+        
+            <div class="pdf-line" style="left: 549.050609741211px; top: 579.3479675292969px; width: 1px; height: 262.3158740234376px; background-color: black;"></div>
+        
+    
+        
+            <div class="pdf-line" style="left: 635.2479064941407px; top: 579.3479675292969px; width: 1px; height: 262.3158740234376px; background-color: black;"></div>
+        
+    
+        
+            <div class="pdf-line" style="left: 462.84000000000003px; top: 859.0735772705078px; width: 1px; height: 124.90026428222666px; background-color: black;"></div>
+        
+    
+        
+            <div class="pdf-line" style="left: 549.050609741211px; top: 859.0735772705078px; width: 1px; height: 124.90026428222666px; background-color: black;"></div>
+        
+    
+        
+            <div class="pdf-line" style="left: 635.2479064941407px; top: 859.0735772705078px; width: 1px; height: 124.90026428222666px; background-color: black;"></div>
+        
+    
+        
+            <div class="pdf-line" style="left: 635.2479064941407px; top: 1001.3902337646485px; width: 1px; height: 35.245000000000005px; background-color: black;"></div>
+        
+    
+        
+            <div class="pdf-line" style="left: 721.4185772705079px; top: 336.05107727050785px; width: 1px; height: 700.5841564941406px; background-color: black;"></div>
+        
+    
+        
+            <div class="pdf-line" style="left: 24.006498985290527px; top: 336.05107727050785px; width: 1px; height: 700.5841564941406px; background-color: black;"></div>
+        
+    
+        
+            <div class="pdf-line" style="left: 462.84000000000003px; top: 1001.3902337646485px; width: 1px; height: 35.245000000000005px; background-color: black;"></div>
+        
+    
+        
+            <div class="pdf-line" style="left: 549.050609741211px; top: 1001.3902337646485px; width: 1px; height: 35.245000000000005px; background-color: black;"></div>
+        
+    
+        
+            <div class="pdf-line" style="left: 26.001498985290528px; top: 334.7210772705078px; width: 694.6324237442018px; height: 1px; background-color: black;"></div>
+        
+    
+        
+            <div class="pdf-line" style="left: 25.33649898529053px; top: 352.0110772705078px; width: 697.2924237442018px; height: 1px; background-color: black;"></div>
+        
+    
+        
+            <div class="pdf-line" style="left: 25.33649898529053px; top: 383.3990447998047px; width: 697.2924237442018px; height: 1px; background-color: black;"></div>
+        
+    
+        
+            <div class="pdf-line" style="left: 25.33649898529053px; top: 409.9990447998047px; width: 697.2924237442018px; height: 1px; background-color: black;"></div>
+        
+    
+        
+            <div class="pdf-line" style="left: 25.33649898529053px; top: 442.0653659057617px; width: 697.2924237442018px; height: 1px; background-color: black;"></div>
+        
+    
+        
+            <div class="pdf-line" style="left: 25.33649898529053px; top: 477.4433740234375px; width: 697.2924237442018px; height: 1px; background-color: black;"></div>
+        
+    
+        
+            <div class="pdf-line" style="left: 25.33649898529053px; top: 494.73337402343753px; width: 697.2924237442018px; height: 1px; background-color: black;"></div>
+        
+    
+        
+            <div class="pdf-line" style="left: 25.33649898529053px; top: 512.0500000000001px; width: 697.2924237442018px; height: 1px; background-color: black;"></div>
+        
+    
+        
+            <div class="pdf-line" style="left: 25.33649898529053px; top: 543.4379675292969px; width: 697.2924237442018px; height: 1px; background-color: black;"></div>
+        
+    
+        
+            <div class="pdf-line" style="left: 25.33649898529053px; top: 560.727967529297px; width: 697.2924237442018px; height: 1px; background-color: black;"></div>
+        
+    
+        
+            <div class="pdf-line" style="left: 25.33649898529053px; top: 578.0179675292969px; width: 697.2924237442018px; height: 1px; background-color: black;"></div>
+        
+    
+        
+            <div class="pdf-line" style="left: 25.33649898529053px; top: 595.3079675292969px; width: 697.2924237442018px; height: 1px; background-color: black;"></div>
+        
+    
+        
+            <div class="pdf-line" style="left: 25.33649898529053px; top: 632.9469918823243px; width: 697.2924237442018px; height: 1px; background-color: black;"></div>
+        
+    
+        
+            <div class="pdf-line" style="left: 25.33649898529053px; top: 650.2369918823242px; width: 697.2924237442018px; height: 1px; background-color: black;"></div>
+        
+    
+        
+            <div class="pdf-line" style="left: 25.33649898529053px; top: 667.5269918823243px; width: 697.2924237442018px; height: 1px; background-color: black;"></div>
+        
+    
+        
+            <div class="pdf-line" style="left: 25.33649898529053px; top: 684.8170324707031px; width: 697.2924237442018px; height: 1px; background-color: black;"></div>
+        
+    
+        
+            <div class="pdf-line" style="left: 25.33649898529053px; top: 702.1070324707032px; width: 697.2924237442018px; height: 1px; background-color: black;"></div>
+        
+    
+        
+            <div class="pdf-line" style="left: 25.33649898529053px; top: 719.3970324707032px; width: 697.2924237442018px; height: 1px; background-color: black;"></div>
+        
+    
+        
+            <div class="pdf-line" style="left: 25.33649898529053px; top: 736.6870324707031px; width: 697.2924237442018px; height: 1px; background-color: black;"></div>
+        
+    
+        
+            <div class="pdf-line" style="left: 25.33649898529053px; top: 753.9770324707032px; width: 697.2924237442018px; height: 1px; background-color: black;"></div>
+        
+    
+        
+            <div class="pdf-line" style="left: 25.33649898529053px; top: 771.2670324707032px; width: 697.2924237442018px; height: 1px; background-color: black;"></div>
+        
+    
+        
+            <div class="pdf-line" style="left: 25.33649898529053px; top: 788.5835772705078px; width: 697.2924237442018px; height: 1px; background-color: black;"></div>
+        
+    
+        
+            <div class="pdf-line" style="left: 25.33649898529053px; top: 805.8735772705079px; width: 697.2924237442018px; height: 1px; background-color: black;"></div>
+        
+    
+        
+            <div class="pdf-line" style="left: 25.33649898529053px; top: 823.1635772705079px; width: 697.2924237442018px; height: 1px; background-color: black;"></div>
+        
+    
+        
+            <div class="pdf-line" style="left: 25.33649898529053px; top: 840.4535772705078px; width: 697.2924237442018px; height: 1px; background-color: black;"></div>
+        
+    
+        
+            <div class="pdf-line" style="left: 25.33649898529053px; top: 857.7435772705079px; width: 697.2924237442018px; height: 1px; background-color: black;"></div>
+        
+    
+        
+            <div class="pdf-line" style="left: 25.33649898529053px; top: 875.0335772705079px; width: 697.2924237442018px; height: 1px; background-color: black;"></div>
+        
+    
+        
+            <div class="pdf-line" style="left: 25.33649898529053px; top: 892.3235772705078px; width: 697.2924237442018px; height: 1px; background-color: black;"></div>
+        
+    
+        
+            <div class="pdf-line" style="left: 25.33649898529053px; top: 930.8935772705079px; width: 697.2924237442018px; height: 1px; background-color: black;"></div>
+        
+    
+        
+            <div class="pdf-line" style="left: 25.33649898529053px; top: 948.1835772705078px; width: 697.2924237442018px; height: 1px; background-color: black;"></div>
+        
+    
+        
+            <div class="pdf-line" style="left: 25.33649898529053px; top: 965.4868902587891px; width: 697.2924237442018px; height: 1px; background-color: black;"></div>
+        
+    
+        
+            <div class="pdf-line" style="left: 25.33649898529053px; top: 982.7768902587891px; width: 697.2924237442018px; height: 1px; background-color: black;"></div>
+        
+    
+        
+            <div class="pdf-line" style="left: 25.33649898529053px; top: 1000.0602337646485px; width: 697.2924237442018px; height: 1px; background-color: black;"></div>
+        
+    
+        
+            <div class="pdf-line" style="left: 25.33649898529053px; top: 1035.4382012939454px; width: 697.2924237442018px; height: 1px; background-color: black;"></div>
+        
+    
+        
+            <div class="pdf-text" style="left: 155.1046036529541px; top: 31.720467529296876px; font-size: 11.0px; font-family: 'Calibri', Arial; color: rgb(0, 0, 0);">
+                LISTADO DE OPERACION DE LAS OFICINAS DE SERVICIOS Y ATENCION AL CLIENTE
+            </div>
+        
+    
+        
+            <div class="pdf-text" style="left: 26.99899898529053px; top: 801.4313415527345px; font-size: 10.0px; font-family: 'Calibri', Arial; color: rgb(0, 0, 0);">
+                Compromiso: Atencion de los puntos no cumplidos con fecha___________________________________________________
+            </div>
+        
+    
+        
+            <div class="pdf-text" style="left: 202.18660568237306px; top: 766.8114837646485px; font-size: 10.0px; font-family: 'Calibri', Arial; color: rgb(0, 0, 0);">
+                NOMBRE, RPE Y FIRMA DEL RESPONSABLE DEL CAC O PROCESO
+            </div>
+        
+    
+        
+            <div class="pdf-text" style="left: 249.01589431762696px; top: 746.7284350585938px; font-size: 10.0px; font-family: 'Calibri', Arial; color: rgb(0, 0, 0);">
+                __________________________________
+            </div>
+        
+    
+        
+            <div class="pdf-text" style="left: 26.99899898529053px; top: 354.0858740234375px; font-size: 10.0px; font-family: 'Calibri', Arial; color: rgb(0, 0, 0);">
+                Acceso disponible a todos los sistemas de operación (correo electrónico, siat y 
+            </div>
+        
+    
+        
+            <div class="pdf-text" style="left: 26.99899898529053px; top: 457.8258740234375px; font-size: 10.0px; font-family: 'Calibri-Bold', Arial; color: rgb(0, 0, 0);">
+                PROTOCOLO DE LIMPIEZA Y SALUBRIDAD
+            </div>
+        
+    
+        
+            <div class="pdf-text" style="left: 26.99899898529053px; top: 371.3758740234375px; font-size: 10.0px; font-family: 'Calibri', Arial; color: rgb(0, 0, 0);">
+                Impresoras y/o certificadoras se encuentran en condiciones adecuadas de 
+            </div>
+        
+    
+        
+            <div class="pdf-text" style="left: 26.99899898529053px; top: 109.59195129394531px; font-size: 10.0px; font-family: 'Calibri', Arial; color: rgb(0, 0, 0);">
+                Acceso al interior de oficinas seguro (puertas y cerraduras en buen estado).
+            </div>
+        
+    
+        
+            <div class="pdf-text" style="left: 26.99899898529053px; top: 136.72398376464844px; font-size: 10.0px; font-family: 'Calibri', Arial; color: rgb(0, 0, 0);">
+                Botiquin de primeros auxilios (con material de curación y sin medicamentos).
+            </div>
+        
+    
+        
+            <div class="pdf-text" style="left: 26.99899898529053px; top: 163.85601623535158px; font-size: 10.0px; font-family: 'Calibri', Arial; color: rgb(0, 0, 0);">
+                Sistemas de seguridad en función (alarmas).
+            </div>
+        
+    
+        
+            <div class="pdf-text" style="left: 26.99899898529053px; top: 181.14601623535157px; font-size: 10.0px; font-family: 'Calibri-Bold', Arial; color: rgb(0, 0, 0);">
+                OPERACIÓN Y PERSONAL
+            </div>
+        
+    
+        
+            <div class="pdf-text" style="left: 26.99899898529053px; top: 440.53587402343754px; font-size: 10.0px; font-family: 'Calibri', Arial; color: rgb(0, 0, 0);">
+                Verificar la existencia de equipos distractores o dispositivos no reglamentados 
+            </div>
+        
+    
+        
+            <div class="pdf-text" style="left: 26.99899898529053px; top: 302.2025610351563px; font-size: 10.0px; font-family: 'Calibri', Arial; color: rgb(0, 0, 0);">
+                Verificar estén visibles y actualizados los compromisos de servicio y directorio (m
+            </div>
+        
+    
+        
+            <div class="pdf-text" style="left: 26.99899898529053px; top: 319.37290649414064px; font-size: 10.0px; font-family: 'Calibri', Arial; color: rgb(0, 0, 0);">
+                Verificar el correcto funcionamiento de los sistemas de atención (cfeturno, 
+            </div>
+        
+    
+        
+            <div class="pdf-text" style="left: 26.99899898529053px; top: 336.92892272949223px; font-size: 10.0px; font-family: 'Calibri', Arial; color: rgb(0, 0, 0);">
+                monivent, cfecam, disponibilidad de cfemáticos, ventanilla electrónica y hot-
+            </div>
+        
+    
+        
+            <div class="pdf-text" style="left: 26.99899898529053px; top: 284.9125610351563px; font-size: 10.0px; font-family: 'Calibri', Arial; color: rgb(0, 0, 0);">
+                Verificar el correcto funcionamiento de Pin Pad en CFEmaticos
+            </div>
+        
+    
+        
+            <div class="pdf-text" style="left: 26.99899898529053px; top: 388.6525610351563px; font-size: 10.0px; font-family: 'Calibri', Arial; color: rgb(0, 0, 0);">
+                Papel para impresoras termicas, CFEmaticos,TPV (s) Y 7/PIN pad (s)
+            </div>
+        
+    
+        
+            <div class="pdf-text" style="left: 26.99899898529053px; top: 405.9558740234375px; font-size: 10.0px; font-family: 'Calibri', Arial; color: rgb(0, 0, 0);">
+                Papeleria para envio del ingreso diario ( bolsas, segurisellos, fichas de traslado, 
+            </div>
+        
+    
+        
+            <div class="pdf-text" style="left: 26.99899898529053px; top: 75.01195129394532px; font-size: 10.0px; font-family: 'Calibri', Arial; color: rgb(0, 0, 0);">
+                Caja de seguridad en buen estado.
+            </div>
+        
+    
+        
+            <div class="pdf-text" style="left: 26.99899898529053px; top: 92.30195129394532px; font-size: 10.0px; font-family: 'Calibri', Arial; color: rgb(0, 0, 0);">
+                Cámara de circuito cerrado en funcionamiento.
+            </div>
+        
+    
+        
+            <div class="pdf-text" style="left: 26.99899898529053px; top: 423.23256103515627px; font-size: 10.0px; font-family: 'Calibri', Arial; color: rgb(0, 0, 0);">
+                Existencia de folletos o difusión de: cuánta energía consumen sus aparatos, 
+            </div>
+        
+    
+        
+            <div class="pdf-text" style="left: 26.99899898529053px; top: 198.43601623535156px; font-size: 10.0px; font-family: 'Calibri', Arial; color: rgb(0, 0, 0);">
+                Plantilla laboral completa al inicio de jornada
+            </div>
+        
+    
+        
+            <div class="pdf-text" style="left: 26.99899898529053px; top: 215.72601623535158px; font-size: 10.0px; font-family: 'Calibri', Arial; color: rgb(0, 0, 0);">
+                Apariencia adecuada de ejecutivos de atención a clientes (uniforme, gafete 
+            </div>
+        
+    
+        
+            <div class="pdf-text" style="left: 26.99899898529053px; top: 233.05587402343753px; font-size: 10.0px; font-family: 'Calibri', Arial; color: rgb(0, 0, 0);">
+                Personalizador de acuerdo con la imagen institucional autorizada, visible y en 
+            </div>
+        
+    
+        
+            <div class="pdf-text" style="left: 26.99899898529053px; top: 250.34587402343752px; font-size: 10.0px; font-family: 'Calibri', Arial; color: rgb(0, 0, 0);">
+                Articulos personales no visibles al cliente
+            </div>
+        
+    
+        
+            <div class="pdf-text" style="left: 26.99899898529053px; top: 267.6358740234375px; font-size: 10.0px; font-family: 'Calibri', Arial; color: rgb(0, 0, 0);">
+                Morralla sificiente para cambio en ventanillas y CFEmaticos
+            </div>
+        
+    
+        
+            <div class="pdf-text" style="left: 26.99899898529053px; top: 634.2104675292969px; font-size: 10.0px; font-family: 'Calibri', Arial; color: rgb(0, 0, 0);">
+                Proteccion personal vulnerable (EPP, verificación del estado de salud)
+            </div>
+        
+    
+        
+            <div class="pdf-text" style="left: 26.99899898529053px; top: 605.4825000000001px; font-size: 10.0px; font-family: 'Calibri', Arial; color: rgb(0, 0, 0);">
+                Prohibida la decoración no institucional al interior de las oficinas y áreas de 
+            </div>
+        
+    
+        
+            <div class="pdf-text" style="left: 26.99899898529053px; top: 623.0384756469726px; font-size: 10.0px; font-family: 'Calibri', Arial; color: rgb(0, 0, 0);">
+                trabajo
+            </div>
+        
+    
+        
+            <div class="pdf-text" style="left: 26.99899898529053px; top: 652.6975px; font-size: 10.0px; font-family: 'Calibri', Arial; color: rgb(0, 0, 0);">
+                Revision y limpieza sistemas ventilación
+            </div>
+        
+    
+        
+            <div class="pdf-text" style="left: 26.99899898529053px; top: 672.7804675292969px; font-size: 10.0px; font-family: 'Calibri', Arial; color: rgb(0, 0, 0);">
+                Política de control de visitas
+            </div>
+        
+    
+        
+            <div class="pdf-text" style="left: 26.99899898529053px; top: 692.5975000000001px; font-size: 10.0px; font-family: 'Calibri', Arial; color: rgb(0, 0, 0);">
+                Establecer contacto con el personal vulnerable para sensibilizar sobre las 
+            </div>
+        
+    
+        
+            <div class="pdf-text" style="left: 26.99899898529053px; top: 710.1534350585938px; font-size: 10.0px; font-family: 'Calibri', Arial; color: rgb(0, 0, 0);">
+                medidas de seguridad
+            </div>
+        
+    
+        
+            <div class="pdf-text" style="left: 26.99899898529053px; top: 578.0844918823243px; font-size: 10.0px; font-family: 'Calibri', Arial; color: rgb(0, 0, 0);">
+                Se restringe el ingreso de , contratistas, gestores, visitantes, familiares y 
+            </div>
+        
+    
+        
+            <div class="pdf-text" style="left: 26.99899898529053px; top: 595.6404675292969px; font-size: 10.0px; font-family: 'Calibri', Arial; color: rgb(0, 0, 0);">
+                cualquier persona que no sea trabajador o trabajadora de CFE
+            </div>
+        
+    
+        
+            <div class="pdf-text" style="left: 26.99899898529053px; top: 476.84489837646487px; font-size: 10.0px; font-family: 'Calibri', Arial; color: rgb(0, 0, 0);">
+                Limpieza diaria a superficies con desinfectante
+            </div>
+        
+    
+        
+            <div class="pdf-text" style="left: 26.99899898529053px; top: 496.15648376464844px; font-size: 10.0px; font-family: 'Calibri', Arial; color: rgb(0, 0, 0);">
+                Disponibilidad Gel Antibacterial para su uso
+            </div>
+        
+    
+        
+            <div class="pdf-text" style="left: 26.99899898529053px; top: 515.4414837646484px; font-size: 10.0px; font-family: 'Calibri', Arial; color: rgb(0, 0, 0);">
+                Jabon y toallas desechables
+            </div>
+        
+    
+        
+            <div class="pdf-text" style="left: 26.99899898529053px; top: 534.7264837646485px; font-size: 10.0px; font-family: 'Calibri', Arial; color: rgb(0, 0, 0);">
+                Programación de atención a jubilados ( donde aplique)
+            </div>
+        
+    
+        
+            <div class="pdf-text" style="left: 26.99899898529053px; top: 554.0114837646485px; font-size: 10.0px; font-family: 'Calibri', Arial; color: rgb(0, 0, 0);">
+                Espacios diferenciados para ingresar y salir (diferentes filas)
+            </div>
+        
+    
+        
+            <div class="pdf-line" style="left: 462.84000000000003px; top: 73.21648376464844px; width: 1px; height: 106.00101623535156px; background-color: black;"></div>
+        
+    
+        
+            <div class="pdf-line" style="left: 549.050609741211px; top: 73.21648376464844px; width: 1px; height: 106.00101623535156px; background-color: black;"></div>
+        
+    
+        
+            <div class="pdf-line" style="left: 635.2479064941407px; top: 73.21648376464844px; width: 1px; height: 106.00101623535156px; background-color: black;"></div>
+        
+    
+        
+            <div class="pdf-line" style="left: 462.84000000000003px; top: 196.6404675292969px; width: 1px; height: 259.25693084716795px; background-color: black;"></div>
+        
+    
+        
+            <div class="pdf-line" style="left: 549.050609741211px; top: 196.6404675292969px; width: 1px; height: 259.25693084716795px; background-color: black;"></div>
+        
+    
+        
+            <div class="pdf-line" style="left: 635.2479064941407px; top: 196.6404675292969px; width: 1px; height: 259.25693084716795px; background-color: black;"></div>
+        
+    
+        
+            <div class="pdf-line" style="left: 24.006498985290527px; top: 71.88648376464845px; width: 1px; height: 655.8894512939453px; background-color: black;"></div>
+        
+    
+        
+            <div class="pdf-line" style="left: 462.84000000000003px; top: 473.3203659057617px; width: 1px; height: 254.45556915283203px; background-color: black;"></div>
+        
+    
+        
+            <div class="pdf-line" style="left: 549.050609741211px; top: 473.3203659057617px; width: 1px; height: 254.45556915283203px; background-color: black;"></div>
+        
+    
+        
+            <div class="pdf-line" style="left: 635.2479064941407px; top: 473.3203659057617px; width: 1px; height: 254.45556915283203px; background-color: black;"></div>
+        
+    
+        
+            <div class="pdf-line" style="left: 721.4185772705079px; top: 73.21648376464844px; width: 1px; height: 654.5594512939454px; background-color: black;"></div>
+        
+    
+        
+            <div class="pdf-line" style="left: 25.33649898529053px; top: 71.88648376464845px; width: 697.2924237442018px; height: 1px; background-color: black;"></div>
+        
+    
+        
+            <div class="pdf-line" style="left: 25.33649898529053px; top: 89.17648376464844px; width: 697.2924237442018px; height: 1px; background-color: black;"></div>
+        
+    
+        
+            <div class="pdf-line" style="left: 25.33649898529053px; top: 106.46648376464844px; width: 697.2924237442018px; height: 1px; background-color: black;"></div>
+        
+    
+        
+            <div class="pdf-line" style="left: 25.33649898529053px; top: 123.75648376464845px; width: 697.2924237442018px; height: 1px; background-color: black;"></div>
+        
+    
+        
+            <div class="pdf-line" style="left: 25.33649898529053px; top: 160.73046752929687px; width: 697.2924237442018px; height: 1px; background-color: black;"></div>
+        
+    
+        
+            <div class="pdf-line" style="left: 25.33649898529053px; top: 178.0204675292969px; width: 697.2924237442018px; height: 1px; background-color: black;"></div>
+        
+    
+        
+            <div class="pdf-line" style="left: 25.33649898529053px; top: 195.3104675292969px; width: 697.2924237442018px; height: 1px; background-color: black;"></div>
+        
+    
+        
+            <div class="pdf-line" style="left: 25.33649898529053px; top: 212.60046752929688px; width: 438.7004928970337px; height: 1px; background-color: black;"></div>
+        
+    
+        
+            <div class="pdf-line" style="left: 25.33649898529053px; top: 229.93040649414064px; width: 697.2924237442018px; height: 1px; background-color: black;"></div>
+        
+    
+        
+            <div class="pdf-line" style="left: 25.33649898529053px; top: 247.22040649414063px; width: 697.2924237442018px; height: 1px; background-color: black;"></div>
+        
+    
+        
+            <div class="pdf-line" style="left: 25.33649898529053px; top: 264.5104064941406px; width: 697.2924237442018px; height: 1px; background-color: black;"></div>
+        
+    
+        
+            <div class="pdf-line" style="left: 25.33649898529053px; top: 281.80040649414065px; width: 697.2924237442018px; height: 1px; background-color: black;"></div>
+        
+    
+        
+            <div class="pdf-line" style="left: 25.33649898529053px; top: 299.09040649414067px; width: 697.2924237442018px; height: 1px; background-color: black;"></div>
+        
+    
+        
+            <div class="pdf-line" style="left: 25.33649898529053px; top: 316.38040649414063px; width: 697.2924237442018px; height: 1px; background-color: black;"></div>
+        
+    
+        
+            <div class="pdf-line" style="left: 25.33649898529053px; top: 350.96040649414067px; width: 697.2924237442018px; height: 1px; background-color: black;"></div>
+        
+    
+        
+            <div class="pdf-line" style="left: 25.33649898529053px; top: 368.25040649414063px; width: 697.2924237442018px; height: 1px; background-color: black;"></div>
+        
+    
+        
+            <div class="pdf-line" style="left: 25.33649898529053px; top: 385.54040649414065px; width: 697.2924237442018px; height: 1px; background-color: black;"></div>
+        
+    
+        
+            <div class="pdf-line" style="left: 25.33649898529053px; top: 402.8304064941406px; width: 697.2924237442018px; height: 1px; background-color: black;"></div>
+        
+    
+        
+            <div class="pdf-line" style="left: 25.33649898529053px; top: 420.12040649414064px; width: 697.2924237442018px; height: 1px; background-color: black;"></div>
+        
+    
+        
+            <div class="pdf-line" style="left: 25.33649898529053px; top: 437.41040649414066px; width: 697.2924237442018px; height: 1px; background-color: black;"></div>
+        
+    
+        
+            <div class="pdf-line" style="left: 25.33649898529053px; top: 454.70036590576177px; width: 697.2924237442018px; height: 1px; background-color: black;"></div>
+        
+    
+        
+            <div class="pdf-line" style="left: 25.33649898529053px; top: 471.99036590576173px; width: 697.2924237442018px; height: 1px; background-color: black;"></div>
+        
+    
+        
+            <div class="pdf-line" style="left: 25.33649898529053px; top: 491.27536590576176px; width: 697.2924237442018px; height: 1px; background-color: black;"></div>
+        
+    
+        
+            <div class="pdf-line" style="left: 25.33649898529053px; top: 510.58699188232424px; width: 697.2924237442018px; height: 1px; background-color: black;"></div>
+        
+    
+        
+            <div class="pdf-line" style="left: 25.33649898529053px; top: 529.8719918823242px; width: 697.2924237442018px; height: 1px; background-color: black;"></div>
+        
+    
+        
+            <div class="pdf-line" style="left: 25.33649898529053px; top: 549.1569918823243px; width: 697.2924237442018px; height: 1px; background-color: black;"></div>
+        
+    
+        
+            <div class="pdf-line" style="left: 25.33649898529053px; top: 568.4419918823243px; width: 697.2924237442018px; height: 1px; background-color: black;"></div>
+        
+    
+        
+            <div class="pdf-line" style="left: 25.33649898529053px; top: 610.0709756469727px; width: 697.2924237442018px; height: 1px; background-color: black;"></div>
+        
+    
+        
+            <div class="pdf-line" style="left: 25.33649898529053px; top: 629.3559756469726px; width: 697.2924237442018px; height: 1px; background-color: black;"></div>
+        
+    
+        
+            <div class="pdf-line" style="left: 25.33649898529053px; top: 648.6409756469727px; width: 697.2924237442018px; height: 1px; background-color: black;"></div>
+        
+    
+        
+            <div class="pdf-line" style="left: 25.33649898529053px; top: 667.9259756469727px; width: 697.2924237442018px; height: 1px; background-color: black;"></div>
+        
+    
+        
+            <div class="pdf-line" style="left: 25.33649898529053px; top: 687.2109350585938px; width: 697.2924237442018px; height: 1px; background-color: black;"></div>
+        
+    
+        
+            <div class="pdf-line" style="left: 25.33649898529053px; top: 726.5789837646485px; width: 697.2924237442018px; height: 1px; background-color: black;"></div>
+        
+    
+</body>
+</html>

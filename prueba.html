@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Descargar PDF con Firmas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        #content {
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .signature-section {
+            margin: 20px 0;
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+        .signature-input {
+            margin: 10px 0;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="content">
+        <h1>Documento con Firmas</h1>
+        <div class="signature-section">
+            <h3>REVISÓ NOMBRE FIRMA Y RPE</h3>
+            <div class="signature-input">
+                <label for="revisoImage">Subir firma:</label>
+                <input type="file" id="revisoImage" accept="image/*" onchange="loadImage('revisoImage', 'revisoSignature')">
+                <input type="text" id="revisoName" placeholder="Escribe tu nombre">
+            </div>
+            <div id="revisoSignature"></div>
+        </div>
+        <div class="signature-section">
+            <table style="width: 100%; border-collapse: collapse;">
+                <tr>
+                    <td style="border: 1px solid #ccc; padding: 10px; width: 50%;">
+                        <h3>USUARIO DEL VEHÍCULO OFICIAL FIRMA Y RPE</h3>
+                        <div class="signature-input">
+                            <label for="usuarioImage">Subir firma:</label>
+                            <input type="file" id="usuarioImage" accept="image/*" onchange="loadImage('usuarioImage', 'usuarioSignature')">
+                            <input type="text" id="usuarioName" placeholder="Escribe tu nombre">
+                        </div>
+                        <div id="usuarioSignature"></div>
+                    </td>
+                    <td style="border: 1px solid #ccc; padding: 10px; width: 50%; vertical-align: top;">
+                        <h3>ADMINISTRADOR DE PV RPE</h3>
+                        <p>Lic. Ntra. Guadalupe Chan Couoh - GEY8</p>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <button onclick="generatePDF()">Descargar PDF</button>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script>
+        function loadImage(inputId, signatureId) {
+            const input = document.getElementById(inputId);
+            const signatureDiv = document.getElementById(signatureId);
+            const file = input.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const img = document.createElement('img');
+                    img.src = e.target.result;
+                    img.style.maxWidth = '200px';
+                    signatureDiv.innerHTML = '';
+                    signatureDiv.appendChild(img);
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+
+        async function generatePDF() {
+            const { jsPDF } = window.jspdf;
+            const content = document.getElementById('content');
+            const pdfWidth = 210; // Ancho de A4 en mm
+            const pdfHeight = 297; // Alto de A4 en mm
+
+            // Convertir el contenido HTML a canvas
+            const canvas = await html2canvas(content, {
+                scale: 2,
+                useCORS: true,
+                windowWidth: content.scrollWidth,
+                windowHeight: content.scrollHeight
+            });
+
+            const imgData = canvas.toDataURL('image/png');
+            const imgWidth = canvas.width;
+            const imgHeight = canvas.height;
+
+            // Calcular la escala para que quepa en una sola página
+            const ratio = Math.min(pdfWidth / imgWidth, pdfHeight / imgHeight);
+            const scaledWidth = imgWidth * ratio;
+            const scaledHeight = imgHeight * ratio;
+
+            // Calcular posición para centrar la imagen
+            const xOffset = (pdfWidth - scaledWidth) / 2;
+            const yOffset = (pdfHeight - scaledHeight) / 2;
+
+            // Crear el PDF
+            const pdf = new jsPDF({
+                orientation: 'portrait',
+                unit: 'mm',
+                format: [pdfWidth, pdfHeight]
+            });
+
+            // Añadir la imagen al PDF, centrada
+            pdf.addImage(imgData, 'PNG', xOffset, yOffset, scaledWidth, scaledHeight);
+
+            // Descargar el PDF
+            pdf.save('documento_firmas.pdf');
+        }
+    </script>
+</body>
+</html>

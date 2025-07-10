@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Excel to HTML</title>
+<style>
+table { border-collapse: collapse; width: 100%; margin: 20px 0; }
+th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+th { background-color: #f2f2f2; font-weight: bold; }
+.merged { background-color: #f0f0f0; }
+</style>
+</head>
+<body>
+<table>
+<tr>
+<td class="merged" rowspan="1" colspan="8">#VALUE!</td>
+<td class="merged" rowspan="1" colspan="3">#VALUE!</td>
+</tr>
+<tr>
+<td>FECHA DE VERIFICACION: </td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>NOMBRE DEL RESPONSABLE:_________________________________________________</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>NOMBRE DE LA OFICINA DE ATENCION:_________________________________________</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>TIPO DE OFICINA DE ATENCION:</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>CAC</td>
+<td></td>
+<td></td>
+<td>CAA</td>
+<td></td>
+<td>OAE</td>
+<td></td>
+<td></td>
+<td>MOD(CON PERSONALIZADA)</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>CAV</td>
+<td></td>
+<td></td>
+<td>CAB</td>
+<td></td>
+<td>ISL</td>
+<td></td>
+<td></td>
+<td>MOD (SIN PERSONALIZADA)</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td>DESCRIPCIÓN.</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>SI</td>
+<td>NO</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td class="merged" rowspan="1" colspan="11">EXTERIOR</td>
+</tr>
+<tr>
+<td class="merged" rowspan="1" colspan="8">Pintura en buenas condiciones (libre de manchas, rallones, humedad).</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="merged" rowspan="1" colspan="8">Áreas de jardínes en buenas condiciones, plantas libre de plagas, pasto podado y limpio.</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="merged" rowspan="1" colspan="8">Luminarias en buen estado (limpio, no roto, sin daño).</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="merged" rowspan="1" colspan="8">Cristales limpios y en buenas condiciones (ventanales, ventanas, puertas de acceso).</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="merged" rowspan="1" colspan="8">Banquetas, estacionamiento y rampas en buen estado (limpias, pintadas, sin burbujas y sin obstrucción, libre de vendedores ambulantes).</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="merged" rowspan="1" colspan="8">Rampas en buen estado (limpias, pintadas y sin obstruccion)</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="merged" rowspan="1" colspan="8">Salida de emergencia sin obstruccion y en buen estado</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="merged" rowspan="1" colspan="8">Señalamientos para clientes en buen estado (horarios de atención, señales de protección civil, etc.).</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="merged" rowspan="1" colspan="8">Horario de atencion a la vista y en buen estado</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="merged" rowspan="1" colspan="11">INTERIOR</td>
+</tr>
+<tr>
+<td class="merged" rowspan="1" colspan="8">Pintura en buenas condiciones (libre de manchas, rallones, humedad).</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="merged" rowspan="1" colspan="8">Cristales limpios y en buenas condiciones (ventanales, ventanas, puertas de acceso).</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="merged" rowspan="1" colspan="8">Mobiliario en buen estado (adecuado, no roto, limpio, no rallado).</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="merged" rowspan="1" colspan="8">Pisos limpios, sin grietas, no rotos.</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="merged" rowspan="1" colspan="8">Señalamientos visibles y en buen estado para clientes (horarios de atención, señales de protección civil, acciones y áreas prohibidas).</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="merged" rowspan="1" colspan="8">Escritorio ordenados y limpios.</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="merged" rowspan="1" colspan="8">Baños limpios y sin fugas de agua.</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="merged" rowspan="1" colspan="8">Verificar plafones, libre de escurrimientos, manchas y bien colocados.</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="merged" rowspan="1" colspan="8">Luminaria adecuada y en funcionamiento.</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="merged" rowspan="1" colspan="8">Cables ordenados y encintados.</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="merged" rowspan="1" colspan="8">Lamparas y/o focos en buen estdo ( no fundidos)</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="merged" rowspan="1" colspan="8">Aire acondicionado funcionando y en buen estado</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="merged" rowspan="1" colspan="8">Campañas publicitarias vigentes (acrilico, nanners, pantallas)</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="merged" rowspan="1" colspan="8">En el area de clientes se encuentran y/o propaganda no vigente ( retirarlo)</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="merged" rowspan="1" colspan="11">AREA DE CFEMATICOS</td>
+</tr>
+<tr>
+<td class="merged" rowspan="1" colspan="8">Pantalla en buenas condiciones</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="merged" rowspan="1" colspan="8">Pintura en buenas condiciones (libre de manchas, rallones, humedad).</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="merged" rowspan="1" colspan="8">Cristales limpios y en buenas condiciones (ventanales, ventanas, puertas de acceso).</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="merged" rowspan="1" colspan="8">Pisos limpios, sin grietas, no rotos.</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="merged" rowspan="1" colspan="8">Verificar plafones, libre de escurrimientos, manchas y bien colocados.</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="merged" rowspan="1" colspan="8">Verificar que los equipos esten identificados (numero de CFEmatico)</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="merged" rowspan="1" colspan="11">SEGURIDAD</td>
+</tr>
+<tr>
+<td class="merged" rowspan="1" colspan="8">Extintores cargados y vigentes en área de cfemáticos, oficinas  y atención a clientes.</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="merged" rowspan="1" colspan="8">Caja de seguridad en buen estado.</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="merged" rowspan="1" colspan="8">Cámara de circuito cerrado en funcionamiento.</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="merged" rowspan="1" colspan="8">Acceso al interior de oficinas seguro (puertas y cerraduras en buen estado).</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="merged" rowspan="1" colspan="8">Botiquin de primeros auxilios (con material de curación y sin medicamentos).</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="merged" rowspan="1" colspan="8">Sistemas de seguridad en función (alarmas).</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="merged" rowspan="1" colspan="11">OPERACIÓN Y PERSONAL</td>
+</tr>
+<tr>
+<td class="merged" rowspan="1" colspan="8">Plantilla laboral completa al inicio de jornada</td>
+<td class="merged" rowspan="2" colspan="1"></td>
+<td class="merged" rowspan="2" colspan="1"></td>
+<td class="merged" rowspan="2" colspan="1"></td>
+</tr>
+<tr>
+<td class="merged" rowspan="1" colspan="8">Apariencia adecuada de ejecutivos de atención a clientes (uniforme, gafete visible, limpieza y presentación).</td>
+</tr>
+<tr>
+<td class="merged" rowspan="1" colspan="8">Personalizador de acuerdo con la imagen institucional autorizada, visible y en buen estado</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="merged" rowspan="1" colspan="8">Articulos personales no visibles al cliente</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="merged" rowspan="1" colspan="8">Morralla sificiente para cambio en ventanillas y CFEmaticos</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="merged" rowspan="1" colspan="8">Verificar el correcto funcionamiento de Pin Pad en CFEmaticos</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="merged" rowspan="1" colspan="8">Verificar estén visibles y actualizados los compromisos de servicio y directorio (matrix o carteles).</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="merged" rowspan="2" colspan="8">Verificar el correcto funcionamiento de los sistemas de atención (cfeturno, monivent, cfecam, disponibilidad de cfemáticos, ventanilla electrónica y hot-line).</td>
+<td class="merged" rowspan="2" colspan="1"></td>
+<td class="merged" rowspan="2" colspan="1"></td>
+<td class="merged" rowspan="2" colspan="1"></td>
+</tr>
+<tr>
+</tr>
+<tr>
+<td class="merged" rowspan="1" colspan="8">Acceso disponible a todos los sistemas de operación (correo electrónico, siat y páginas institucionales).</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="merged" rowspan="1" colspan="8">Impresoras y/o certificadoras se encuentran en condiciones adecuadas de operación.</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="merged" rowspan="1" colspan="8">Papel para impresoras termicas, CFEmaticos,TPV (s) Y 7/PIN pad (s)</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="merged" rowspan="1" colspan="8">Papeleria para envio del ingreso diario ( bolsas, segurisellos, fichas de traslado, fihas de deposito, etc)</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="merged" rowspan="1" colspan="8">Existencia de folletos o difusión de: cuánta energía consumen sus aparatos, cómo hacer su preparación, conozca su recibo, App CFE, difusión 071, redes sociales CFE, robo de energía, etc.</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="merged" rowspan="1" colspan="8">Verificar la existencia de equipos distractores o dispositivos no reglamentados para el trabajo que se realiza en atención al cliente (celulares, tabletas, televisores, audífonos, otros.) Solicitar su resguardo hasta el fin de la jornada.</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="merged" rowspan="1" colspan="11">PROTOCOLO DE LIMPIEZA Y SALUBRIDAD</td>
+</tr>
+<tr>
+<td class="merged" rowspan="1" colspan="8">Limpieza diaria a superficies con desinfectante</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="merged" rowspan="1" colspan="8">Disponibilidad Gel Antibacterial para su uso</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="merged" rowspan="1" colspan="8">Jabon y toallas desechables</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="merged" rowspan="1" colspan="8">Programación de atención a jubilados ( donde aplique)</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="merged" rowspan="1" colspan="8">Espacios diferenciados para ingresar y salir (diferentes filas)</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="merged" rowspan="1" colspan="8">Se restringe el ingreso de , contratistas, gestores, visitantes, familiares y cualquier persona que no sea trabajador o trabajadora de CFE</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="merged" rowspan="1" colspan="8">Prohibida la decoración no institucional al interior de las oficinas y áreas de trabajo</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="merged" rowspan="1" colspan="8">Proteccion personal vulnerable (EPP, verificación del estado de salud)</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="merged" rowspan="1" colspan="8">Revision y limpieza sistemas ventilación</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="merged" rowspan="1" colspan="8">Política de control de visitas</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="merged" rowspan="1" colspan="8">Establecer contacto con el personal vulnerable para sensibilizar sobre las medidas de seguridad</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td class="merged" rowspan="1" colspan="6">__________________________________</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="merged" rowspan="1" colspan="11">NOMBRE, RPE Y FIRMA DEL RESPONSABLE DEL CAC O PROCESO</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Compromiso: Atencion de los puntos no cumplidos con fecha___________________________________________________</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</table>
+</body>
+</html>

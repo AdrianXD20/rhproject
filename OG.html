@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formato de Inspección de Vehículos</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <style>
+    body { font-size: 10px; }
+    table { border-collapse: collapse; }
+    th, td { border: 1px solid #000; padding: 4px; }
+    input, textarea { width: 100%; box-sizing: border-box; font-size: 10px; }
+    input[type="number"] { text-align: center; }
+    textarea { resize: none; height: 30px; }
+    .signature-img { max-width: 100%; max-height: 50px; object-fit: contain; }
+
+    @media print {
+      #downloadBtn { display: none; }
+      body { margin: 0; font-size: 6px; line-height: 1.1; }
+      #formContent { padding: 0.15in; width: 100%; max-width: none; }
+      table { border-collapse: collapse; }
+      th, td { border: 1px solid #000; padding: 1px; }
+      input, textarea { font-size: 6px; border: none; }
+      textarea { height: 12px; }
+      .signature-img { max-height: 20px; }
+      h1 { font-size: 10px; margin-bottom: 4px; }
+      h2 { font-size: 8px; margin-bottom: 2px; }
+      tr { height: auto; }
+      .bg-gray-200 { background-color: #e5e7eb !important; }
+    }
+  </style>
+</head>
+<body class="p-4 font-sans bg-gray-100">
+  <div id="formContent" class="max-w-3xl mx-auto bg-white p-4 shadow-md">
+    <h1 class="text-base font-bold text-center mb-3">FORMATOS DE INSPECCIÓN DE VEHÍCULOS</h1>
+    
+    <!-- Header Information -->
+    <table class="w-full mb-3 text-xs">
+      <tr>
+        <td class="p-1 font-bold">Zona:</td>
+        <td class="p-1">Comercial Mérida</td>
+        <td class="p-1 font-bold">Centro de Trabajo:</td>
+        <td class="p-1">Oficinas Zona Comercial Mérida</td>
+      </tr>
+      <tr>
+        <td class="p-1 font-bold">No. Economico:</td>
+        <td class="p-1"><input type="text" class="border p-1"></td>
+        <td class="p-1 font-bold">No. Placas:</td>
+        <td class="p-1"><input type="text" class="border p-1"></td>
+      </tr>
+      <tr>
+        <td class="p-1 font-bold">Fecha:</td>
+        <td class="p-1"><input type="date" class="border p-1" value="2025-05-27"></td>
+        <td class="p-1 font-bold">Tipo de Vehiculo:</td>
+        <td class="p-1"><input type="text" class="border p-1"></td>
+      </tr>
+      <tr>
+        <td class="p-1 font-bold">Responsable:</td>
+        <td class="p-1"><input type="text" class="border p-1"></td>
+        <td class="p-1 font-bold">RPE:</td>
+        <td class="p-1"><input type="text" class="border p-1"></td>
+      </tr>
+      <tr>
+        <td class="p-1 font-bold">Kilometraje y fecha del ultimo mantto.:</td>
+        <td class="p-1"><input type="text" class="border p-1"></td>
+        <td class="p-1 font-bold">Kilometraje actual:</td>
+        <td class="p-1"><input type="text" class="border p-1"></td>
+      </tr>
+    </table>
+
+    <!-- Section 1: Seguridad en Vehiculo -->
+    <h2 class="text-sm font-bold mb-2">1.- Seguridad en Vehiculo</h2>
+    <table class="w-full mb-3 text-xs" id="seguridadTable">
+      <thead>
+        <tr class="bg-gray-200">
+          <th class="p-1 w-1/12">Puntos</th>
+          <th class="p-1 w-1/12">Obtenidos</th>
+          <th class="p-1">Descripción</th>
+          <th class="p-1 w-1/3">Observaciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="p-1 text-center">5</td>
+          <td class="p-1"><input type="number" min="0" max="5" value="0" class="obtained" data-section="seguridad"></td>
+          <td class="p-1">Extintor (En buen estado, vigente y bien resguardado)</td>
+          <td class="p-1"><textarea class="border p-1"></textarea></td>
+        </tr>
+        <tr>
+          <td class="p-1 text-center">5</td>
+          <td class="p-1"><input type="number" min="0" max="5" value="5" class="obtained" data-section="seguridad"></td>
+          <td class="p-1">Botiquín (Buen estado, listado de materiales y suficiente)</td>
+          <td class="p-1"><textarea class="border p-1"></textarea></td>
+        </tr>
+        <tr>
+          <td class="p-1 text-center">5</td>
+          <td class="p-1"><input type="number" min="0" max="5" value="5" class="obtained" data-section="seguridad"></td>
+          <td class="p-1">Cinturones de Seguridad (Buen estado)</td>
+          <td class="p-1"><textarea class="border p-1"></textarea></td>
+        </tr>
+        <tr>
+          <td class="p-1 text-center">5</td>
+          <td class="p-1"><input type="number" min="0" max="5" value="5" class="obtained" data-section="seguridad"></td>
+          <td class="p-1">Luces (Intermitentes, direccionales)</td>
+          <td class="p-1"><textarea class="border p-1"></textarea></td>
+        </tr>
+        <tr>
+          <td class="p-1 text-center">5</td>
+          <td class="p-1"><input type="number" min="0" max="5" value="3" class="obtained" data-section="seguridad"></td>
+          <td class="p-1">Llantas traseras y delanteras (Buen estado, con refaccion)</td>
+          <td class="p-1"><textarea class="border p-1"></textarea></td>
+        </tr>
+        <tr>
+          <td class="p-1 text-center">5</td>
+          <td class="p-1"><input type="number" min="0" max="5" value="5" class="obtained" data-section="seguridad"></td>
+          <td class="p-1">Frenos de pie y de estacionamiento (Buen estado)</td>
+          <td class="p-1"><textarea class="border p-1"></textarea></td>
+        </tr>
+        <tr>
+          <td class="p-1 text-center">5</td>
+          <td class="p-1"><input type="number" min="0" max="5" value="5" class="obtained" data-section="seguridad"></td>
+          <td class="p-1">Odómetro</td>
+          <td class="p-1"><textarea class="border p-1"></textarea></td>
+        </tr>
+        <tr>
+          <td class="p-1 text-center">5</td>
+          <td class="p-1"><input type="number" min="0" max="5" value="5" class="obtained" data-section="seguridad"></td>
+          <td class="p-1">Tacómetro</td>
+          <td class="p-1"><textarea class="border p-1"></textarea></td>
+        </tr>
+        <tr>
+          <td class="p-1 text-center">5</td>
+          <td class="p-1"><input type="number" min="0" max="5" value="5" class="obtained" data-section="seguridad"></td>
+          <td class="p-1">Espejos retrovisores (Buen estado)</td>
+          <td class="p-1"><textarea class="border p-1"></textarea></td>
+        </tr>
+        <tr>
+          <td class="p-1 text-center font-bold">45</td>
+          <td class="p-1 text-center font-bold" id="seguridadTotal">38</td>
+          <td class="p-1 font-bold">Total de puntos</td>
+          <td class="p-1"></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- Section 2: Orden y Limpieza en Vehiculos -->
+    <h2 class="text-sm font-bold mb-2">2.- Orden y Limpieza en Vehiculos</h2>
+    <table class="w-full mb-3 text-xs" id="ordenTable">
+      <thead>
+        <tr class="bg-gray-200">
+          <th class="p-1 w-1/12">Puntos</th>
+          <th class="p-1 w-1/12">Obtenidos</th>
+          <th class="p-1">Descripción</th>
+          <th class="p-1 w-1/3">Observaciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="p-1 text-center">5</td>
+          <td class="p-1"><input type="number" min="0" max="5" value="0" class="obtained" data-section="orden"></td>
+          <td class="p-1">Cabinas (Limpia, ordenada y en buen estado)</td>
+          <td class="p-1"><textarea class="border p-1"></textarea></td>
+        </tr>
+        <tr>
+          <td class="p-1 text-center">5</td>
+          <td class="p-1"><input type="number" min="0" max="5" value="3" class="obtained" data-section="orden"></td>
+          <td class="p-1">Cajuela (Limpia, ordenada, libre de materiales)</td>
+          <td class="p-1"><textarea class="border p-1"></textarea></td>
+        </tr>
+        <tr>
+          <td class="p-1 text-center font-bold">10</td>
+          <td class="p-1 text-center font-bold" id="ordenTotal">3</td>
+          <td class="p-1 font-bold">Total de puntos</td>
+          <td class="p-1"></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- Section 3: Mantenimiento de Vehiculos -->
+    <h2 class="text-sm font-bold mb-2">3.- Mantenimiento de Vehiculos</h2>
+    <table class="w-full mb-3 text-xs" id="mantenimientoTable">
+      <thead>
+        <tr class="bg-gray-200">
+          <th class="p-1 w-1/12">Puntos</th>
+          <th class="p-1 w-1/12">Obtenidos</th>
+          <th class="p-1">Descripción</th>
+          <th class="p-1 w-1/3">Observaciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="p-1 text-center">5</td>
+          <td class="p-1"><input type="number" min="0" max="5" value="1" class="obtained" data-section="mantenimiento"></td>
+          <td class="p-1">Mantenimiento de vehiculos (Bitacora Prog. Y Real)</td>
+          <td class="p-1"><textarea class="border p-1"></textarea></td>
+        </tr>
+        <tr>
+          <td class="p-1 text-center">5</td>
+          <td class="p-1"><input type="number" min="0" max="5" value="5" class="obtained" data-section="mantenimiento"></td>
+          <td class="p-1">Poliza de Seguro</td>
+          <td class="p-1"><textarea class="border p-1"></textarea></td>
+        </tr>
+        <tr>
+          <td class="p-1 text-center">5</td>
+          <td class="p-1"><input type="number" min="0" max="5" value="5" class="obtained" data-section="mantenimiento"></td>
+          <td class="p-1">Placas (Frontal y trasera en buen estado) y Tarjeta de Circulación</td>
+          <td class="p-1"><textarea class="border p-1"></textarea></td>
+        </tr>
+        <tr>
+          <td class="p-1 text-center">5</td>
+          <td class="p-1"><input type="number" min="0" max="5" value="2" class="obtained" data-section="mantenimiento"></td>
+          <td class="p-1">Carroceria (Puertas, cofre, fender, libres de golpes y buen estado)</td>
+          <td class="p-1"><textarea class="border p-1"></textarea></td>
+        </tr>
+        <tr>
+          <td class="p-1 text-center">5</td>
+          <td class="p-1"><input type="number" min="0" max="5" value="5" class="obtained" data-section="mantenimiento"></td>
+          <td class="p-1">Niveles (aceite, frenos, anticogelante, direccion h., limpia parabrisas)</td>
+          <td class="p-1"><textarea class="border p-1"></textarea></td>
+        </tr>
+        <tr>
+          <td class="p-1 text-center font-bold">25</td>
+          <td class="p-1 text-center font-bold" id="mantenimientoTotal">18</td>
+          <td class="p-1 font-bold">Total de puntos</td>
+          <td class="p-1"></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- Section 4: Equipos y Herramientas de Trabajo -->
+    <h2 class="text-sm font-bold mb-2">4.- Equipos y Herramientas de Trabajo</h2>
+    <table class="w-full mb-3 text-xs" id="equiposTable">
+      <thead>
+        <tr class="bg-gray-200">
+          <th class="p-1 w-1/12">Puntos</th>
+          <th class="p-1 w-1/12">Obtenidos</th>
+          <th class="p-1">Descripción</th>
+          <th class="p-1 w-1/3">Observaciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="p-1 text-center">3</td>
+          <td class="p-1"><input type="number" min="0" max="3" class="obtained" data-section="equipos"></td>
+          <td class="p-1">Llave para tuerca de llantas</td>
+          <td class="p-1"><textarea class="border p-1"></textarea></td>
+        </tr>
+        <tr>
+          <td class="p-1 text-center">3</td>
+          <td class="p-1"><input type="number" min="0" max="3" class="obtained" data-section="equipos"></td>
+          <td class="p-1">Triangulos reflectantes</td>
+          <td class="p-1"><textarea class="border p-1"></textarea></td>
+        </tr>
+        <tr>
+          <td class="p-1 text-center">3</td>
+          <td class="p-1"><input type="number" min="0" max="3" class="obtained" data-section="equipos"></td>
+          <td class="p-1">Gato hidráulico o de tornillo</td>
+          <td class="p-1"><textarea class="border p-1"></textarea></td>
+        </tr>
+        <tr>
+          <td class="p-1 text-center">3</td>
+          <td class="p-1"><input type="number" min="0" max="3" class="obtained" data-section="equipos"></td>
+          <td class="p-1">Lampara de mano</td>
+          <td class="p-1"><textarea class="border p-1"></textarea></td>
+        </tr>
+        <tr>
+          <td class="p-1 text-center">3</td>
+          <td class="p-1"><input type="number" min="0" max="3" class="obtained" data-section="equipos"></td>
+          <td class="p-1">Cables pasa corrientes</td>
+          <td class="p-1"><textarea class="border p-1"></textarea></td>
+        </tr>
+        <tr>
+          <td class="p-1 text-center">3</td>
+          <td class="p-1"><input type="number" min="0" max="3" class="obtained" data-section="equipos"></td>
+          <td class="p-1">Juego de desarmadores</td>
+          <td class="p-1"><textarea class="border p-1"></textarea></td>
+        </tr>
+        <tr>
+          <td class="p-1 text-center">2</td>
+          <td class="p-1"><input type="number" min="0" max="2" class="obtained" data-section="equipos"></td>
+          <td class="p-1">Llave perica</td>
+          <td class="p-1"><textarea class="border p-1"></textarea></td>
+        </tr>
+        <tr>
+          <td class="p-1 text-center font-bold">20</td>
+          <td class="p-1 text-center font-bold" id="equiposTotal">0</td>
+          <td class="p-1 font-bold">Total de puntos</td>
+          <td class="p-1"></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- Signatures and Final Score -->
+    <div class="mt-4">
+      <table class="w-full mb-3 text-xs">
+        <tr>
+          <td class="p-1 font-bold text-center">REVISÓ NOMBRE FIRMA Y RPE</td>
+        </tr>
+        <tr>
+          <td class="p-1 h-12">
+            <input type="file" accept="image/*" id="revisoSignature" class="border p-1 w-full">
+            <img id="revisoSignatureImg" class="signature-img mt-1" alt="Firma Revisó">
+          </td>
+        </tr>
+      </table>
+      <table class="w-full mb-3 text-xs">
+        <tr>
+          <td class="p-1 font-bold text-center">USUARIO DEL VEHÍCULO OFICIAL FIRMA Y RPE</td>
+          <td class="p-1 font-bold text-center">ADMINISTRADOR DE PV RPE</td>
+        </tr>
+        <tr>
+          <td class="p-1 h-12">
+            <input type="file" accept="image/*" id="usuarioSignature" class="border p-1 w-full">
+            <img id="usuarioSignatureImg" class="signature-img mt-1" alt="Firma Usuario">
+          </td>
+          <td class="p-1 text-center">Lic. Noemí Guadalupe Chan Couoh - GEYK8</td>
+        </tr>
+      </table>
+      <div class="text-right">
+        <p class="font-bold">PUNTOS OBTENIDOS: <span id="grandTotal">59</span></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Download Button -->
+  <button id="downloadBtn" class="mt-3 bg-blue-500 text-white px-3 py-1 rounded hover:bg-blue-600 text-sm" onclick="downloadPDF()">Descargar como PDF</button>
+
+  <script>
+      function calculateTotals() {
+        const sections = {
+          seguridad: { totalId: 'seguridadTotal', maxPoints: [5, 5, 5, 5, 5, 5, 5, 5, 5] },
+          orden: { totalId: 'ordenTotal', maxPoints: [5, 5] },
+          mantenimiento: { totalId: 'mantenimientoTotal', maxPoints: [5, 5, 5, 5, 5] },
+          equipos: { totalId: 'equiposTotal', maxPoints: [3, 3, 3, 3, 3, 3, 2] }
+        };
+
+        let grandTotal = 0;
+
+        for (const [section, { totalId, maxPoints }] of Object.entries(sections)) {
+          const inputs = document.querySelectorAll(`input.obtained[data-section="${section}"]`);
+          let sectionTotal = 0;
+
+          inputs.forEach((input, index) => {
+            let value = parseInt(input.value) || 0;
+            if (value > maxPoints[index]) value = maxPoints[index];
+            if (value < 0) value = 0;
+            input.value = value;
+            sectionTotal += value;
+          });
+
+          document.getElementById(totalId).textContent = sectionTotal;
+          grandTotal += sectionTotal;
+        }
+
+        document.getElementById('grandTotal').textContent = grandTotal;
+      }
+
+    function handleSignatureUpload(inputId, imgId) {
+      const input = document.getElementById(inputId);
+      const img = document.getElementById(imgId);
+
+      input.addEventListener('change', (event) => {
+        const file = event.target.files[0];
+        if (file && file.type.startsWith('image/')) {
+          const reader = new FileReader();
+          reader.onload = (e) => {
+            img.src = e.target.result;
+            img.style.display = 'block';
+          };
+          reader.readAsDataURL(file);
+        } else {
+          img.src = '';
+          img.style.display = 'none';
+        }
+      });
+    }
+
+    
+    
+    // Initialize signature upload handlers
+    handleSignatureUpload('revisoSignature', 'revisoSignatureImg');
+    handleSignatureUpload('usuarioSignature', 'usuarioSignatureImg');
+
+    // Add event listeners to all obtained inputs
+    document.querySelectorAll('input.obtained').forEach(input => {
+      input.addEventListener('input', calculateTotals);
+    });
+
+
+     async function downloadPDF() {
+            const { jsPDF } = window.jspdf;
+            const content = document.getElementById('formContent');
+            const pdfWidth = 210; // Ancho de A4 en mm
+            const pdfHeight = 297; // Alto de A4 en mm (puedes ajustar si necesitas más largo)
+
+            // Convertir el contenido HTML a canvas
+            const canvas = await html2canvas(content, {
+                scale: 4, // Mayor resolución
+                useCORS: true, // Para imágenes externas
+                windowWidth: content.scrollWidth,
+                windowHeight: content.scrollHeight
+            });
+
+            const imgData = canvas.toDataURL('image/png');
+            const imgWidth = canvas.width;
+            const imgHeight = canvas.height;
+
+            // Calcular la escala para que quepa en una sola página
+            const ratio = Math.min(pdfWidth / imgWidth, pdfHeight / imgHeight);
+            const scaledWidth = imgWidth * ratio;
+            const scaledHeight = imgHeight * ratio;
+
+            // Calcular posición para centrar la imagen
+            const xOffset = (pdfWidth - scaledWidth) / 2; // Centrar horizontalmente
+            const yOffset = (pdfHeight - scaledHeight) / 2; // Centrar verticalmente
+
+
+            // Crear el PDF
+            const pdf = new jsPDF({
+                orientation: 'portrait',
+                unit: 'mm',
+                format: [pdfWidth, pdfHeight]
+            });
+
+            // Añadir la imagen al PDF
+            pdf.addImage(imgData, 'PNG', xOffset, yOffset, scaledWidth, scaledHeight);
+
+            // Descargar el PDF
+            pdf.save('Tabla_Vehículos.pdf');
+        }
+
+    // Initial calculation
+    calculateTotals();
+  </script>
+</body>
+</html>

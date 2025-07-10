@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    
+      <script src="https://cdn.tailwindcss.com"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+    <title>Document</title>
+</head>
+ <style>
+    @media print {
+      #downloadBtn { display: none; }
+      body { margin: 0; }
+    }
+    table { border-collapse: collapse; }
+    th, td { border: 1px solid #000; }
+    input, textarea { width: 100%; box-sizing: border-box; }
+    input[type="number"] { text-align: center; }
+    textarea { resize: none; height: 40px; }
+    .signature-img { max-width: 100%; max-height: 60px; object-fit: contain; }
+  </style>
+<body class="p-6 font-sans bg-gray-100">
+  <div id="formContent" class="max-w-3xl mx-auto bg-white p-6 shadow-md">
+    <h1 class="text-base font-bold text-center mb-3">CHECKLIST EDIFICIOS Y OFICINAS</h1>
+     <!-- Header Information -->
+    <table class="w-full mb-4 text-sm">
+        <tr>
+        <td class="p-2 font-bold">Fecha:</td>
+        <td class="p-2"><input type="date" class="border p-1" value="2025-05-27"></td>
+        <td class="p-2 font-bold">Nombre de la Oficina:</td>
+        <td class="p-2"><input type="text" class="border p-1"></td>
+      </tr>
+      <tr>
+        <td class="p-2 font-bold">Nombre del Responsable:</td>
+        <td class="p-2"><input type="text" class="border p-1"></td>
+        <td class="p-2 font-bold">Tipo de oficina de atención:</td>
+        <td class="p-2"><select class="form-select" id="tipoOficina-filter">
+                            <option value="0" selected>CAC</option>
+                            <option value="1" selected>CAA</option>
+                            <option value="2" selected>OAE</option>
+                            <option value="3" selected>CAV</option>
+                            <option value="4" selected>CAB</option>
+                            <option value="5" selected>ISL</option>
+                            <option value="6" selected>MOD (con Personalizada)</option>
+                            <option value="">MOD (sin Personalizada)</option>
+                            <option value="7" selected>Elija una opcion...</option>
+                       </select></td>
+      </tr>
+    </table>
+
+    
+    <!--Parte Exterior-->
+
+    <div class="text-center bg-blue-500 ">Exterior</div>
+     
+     <div class="ratio" style="--bs-aspect-ratio: 1%"></div>
+
+    <table class="w-full mb-4 text-sm">
+         <thead>
+            <tr>
+            <td class="p-2 w-1/16">Descripción</td>
+            <td class="p-2 w-1/12">Si</td>
+            <td class="p-2 w-1/12">No</td>
+            <td class="p-2 w-1/12">N/A</td>
+            </tr>
+    </thead>
+    <tbody>
+            <tr>
+                <td>Pintura en buenas condiciones (libre de manchas, rallones, humedad)</td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Áreas de jardínes en buenas condiciones, plantas libre de plagas, pasto podado y limpio.</td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>
+                    Luminarias en buen estado (limpio, no roto, sin daño).
+                </td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>
+                    Luminarias en buen estado (limpio, no roto, sin daño).
+                </td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>
+                    Cristales limpios y en buenas condiciones (ventanales, ventanas, puertas de acceso).
+                </td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>
+                    Banquetas, estacionamiento y rampas en buen estado (limpias, pintadas, sin burbujas y sin obstrucción, libre de vendedores ambulantes).
+                </td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>
+                    Rampas en buen estado (limpias, pintadas y sin obstruccion)
+                </td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>
+                    Salida de emergencia sin obstruccion y en buen estado
+                </td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>
+                    Señalamientos para clientes en buen estado (horarios de atención, señales de protección civil, etc.).
+                </td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>
+                    Horario de atencion a la vista y en buen estado
+                </td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+
+    </tbody>
+       
+    </table>
+
+
+    <!--Parte Interior-->
+    <div>
+        <div class="text-center bg-blue-500 ">Interior</div>
+        <div class="ratio" style="--bs-aspect-ratio: 1%"></div>
+     <table class="w-full mb-4 text-sm">
+         <thead>
+            <tr>
+            <td class="p-2 w-1/16">Descripción</td>
+            <td class="p-2 w-1/12">Si</td>
+            <td class="p-2 w-1/12">No</td>
+            <td class="p-2 w-1/12">N/A</td>
+            </tr>
+    </thead>
+    <tbody>
+            <tr>
+                <td>Pintura en buenas condiciones (libre de manchas, rallones, humedad)</td>
+                <td><input type="checkbox" name="Si " id="0"></td>
+                <td><input type="checkbox" name="No" id="2"></td>
+                <td><input type="checkbox" name="N/A" id="3"></td>
+            </tr>
+            <tr>
+                <td>Áreas de jardínes en buenas condiciones, plantas libre de plagas, pasto podado y limpio.</td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>
+                    Luminarias en buen estado (limpio, no roto, sin daño).
+                </td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>
+                    Luminarias en buen estado (limpio, no roto, sin daño).
+                </td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>
+                    Cristales limpios y en buenas condiciones (ventanales, ventanas, puertas de acceso).
+                </td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>
+                    Banquetas, estacionamiento y rampas en buen estado (limpias, pintadas, sin burbujas y sin obstrucción, libre de vendedores ambulantes).
+                </td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>
+                    Rampas en buen estado (limpias, pintadas y sin obstruccion)
+                </td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>
+                    Salida de emergencia sin obstruccion y en buen estado
+                </td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>
+                    Señalamientos para clientes en buen estado (horarios de atención, señales de protección civil, etc.).
+                </td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>
+                    Horario de atencion a la vista y en buen estado
+                </td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+
+    </tbody>
+       
+    </table>
+    </div>
+
+    <!--Parte CFEMATICOS-->
+    <div>
+       <div class="text-center bg-blue-500 ">CFEMATICOS</div>
+        <div class="ratio" style="--bs-aspect-ratio: 1%"></div>
+     <table class="w-full mb-4 text-sm">
+         <thead>
+            <tr>
+            <td class="p-2 w-1/16">Descripción</td>
+            <td class="p-2 w-1/12">Si</td>
+            <td class="p-2 w-1/12">No</td>
+            <td class="p-2 w-1/12">N/A</td>
+            </tr>
+    </thead>
+
+    <tbody>
+            <tr>
+                <td>Pintura en buenas condiciones (libre de manchas, rallones, humedad)</td>
+                <td><input type="checkbox" name="Si " id="10"></td>
+                <td><input type="checkbox" name="No" id="12"></td>
+                <td><input type="checkbox" name="N/A" id="13"></td>
+            </tr>
+            <tr>
+                <td>Áreas de jardínes en buenas condiciones, plantas libre de plagas, pasto podado y limpio.</td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>
+                    Luminarias en buen estado (limpio, no roto, sin daño).
+                </td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>
+                    Luminarias en buen estado (limpio, no roto, sin daño).
+                </td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>
+                    Cristales limpios y en buenas condiciones (ventanales, ventanas, puertas de acceso).
+                </td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>
+                    Banquetas, estacionamiento y rampas en buen estado (limpias, pintadas, sin burbujas y sin obstrucción, libre de vendedores ambulantes).
+                </td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>
+                    Rampas en buen estado (limpias, pintadas y sin obstruccion)
+                </td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>
+                    Salida de emergencia sin obstruccion y en buen estado
+                </td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>
+                    Señalamientos para clientes en buen estado (horarios de atención, señales de protección civil, etc.).
+                </td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>
+                    Horario de atencion a la vista y en buen estado
+                </td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+
+    </tbody>
+       
+    </table>
+    </div>
+
+    <!--Parte Seguridad-->
+
+    <!--Parte Operación y Personal -->
+
+    <!--Parte Limpieza y salubridad-->
+
+</div>
+
+     <button id="downloadBtn" class="mt-4 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600" onclick="downloadPDF()">Descargar como PDF</button>
+
+</body>
+<script>
+    function downloadPDF() {
+        
+  const tabla = document.getElementById('formContent');
+  const opt = {
+    margin: [0.5,0.5,0.5, 0.5],
+    filename: 'tabla2.pdf',
+    image: { type: 'jpeg', quality: 0.98 },
+    html2canvas: {
+      scale: 4,
+      useCORS: true,
+      scrollY: 0
+    },
+    jsPDF: {
+      unit: 'in',
+      format: 'a4',
+      orientation: 'landscape'
+    },
+    pagebreak: {
+      mode: ['avoid-all', 'css', 'legacy']
+    }
+  };
+  html2pdf().set(opt).from(tabla).save();
+}
+</script>
+</html>
