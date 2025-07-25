@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Excel to HTML</title>
+<style>
+body { font-size: 10px; }
+table { border-collapse: collapse; width: 100%; margin: 20px 0; }
+th, td { border: 1px solid #434242; padding: 8px; text-align: left; }
+th { background-color: #fffefe; font-weight: bold; }
+.merged { background-color: #f0f0f0; }
+.clickable { cursor: pointer; text-align: center; }
+.clickable:hover { background-color: #f0f0f0; }
+.selected-check { color: green; font-weight: bold; }
+.selected-cross { color: red; font-weight: bold; }
+</style>
+</head>
+<body class="p-4 font-sans bg-gray-100">
+<div id="formContent" class="max-w-3xl mx-auto bg-white p-4 shadow-md">
+<table class="w-full mb-3 text-xs" id="inspectionTable">
+<tr>
+<td class="merged" rowspan="4" colspan="2"></td>
+<td class="merged" rowspan="4" colspan="13">VERIFICACIÓN DE LUCES DE EMERGENCIA</td>
+</tr>
+<tr>
+</tr>
+<tr>
+</tr>
+<tr>
+</tr>
+<tr>
+<td>ZONA:</td>
+<td>Mérida</td>
+<td class="merged" rowspan="1" colspan="3">CENTRO DE TRABAJO:</td>
+<td class="merged" rowspan="1" colspan="5"><input type="text" class="input-observaciones " title="Ingresa Centro de Trabajo"></td>
+<td>DIRECCIÓN:<input type="text" class="input-observaciones " title="Ingresa Direccion"</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="merged" rowspan="1" colspan="2"> RESPONSABLE DE LA INSPECCIÓN:</td>
+<td class="merged" rowspan="1" colspan="13"><input type="text"></td>
+</tr>
+<tr>
+<td>FECHA:</td>
+<td class="merged" rowspan="1" colspan="2"><input type="date" name="Fecha" id="FECHA"></td>
+<td>HORA:</td>
+<td class="merged" rowspan="1" colspan="11">09:07:00</td>
+</tr>
+<tr>
+<td class="merged" rowspan="2" colspan="1">No</td>
+<td>LUCES DE EMERGENCIA</td>
+<td class="merged" rowspan="1" colspan="2"> EN BUEN ESTADO</td>
+<td class="merged" rowspan="1" colspan="2"> BUENA ILUMINACIÓN</td>
+<td class="merged" rowspan="1" colspan="2">ESTÁ CONECTADO</td>
+<td class="merged" rowspan="1" colspan="2">FUNCIONA AL DESCONECTARSE</td>
+<td class="merged" rowspan="1" colspan="2">ESTA ROTA</td>
+<td class="merged" rowspan="1" colspan="2"> ESTA SUCIA</td>
+<td>OBSERVACIONES</td>
+</tr>
+<tr>
+<td>UBICACIÓN</td>
+<td>SI</td>
+<td>NO</td>
+<td>SI</td>
+<td>NO</td>
+<td>SI</td>
+<td>NO</td>
+<td>SI</td>
+<td>NO</td>
+<td>SI</td>
+<td>NO</td>
+<td>SI</td>
+<td>NO</td>
+<td></td>
+</tr>
+<tr>
+<td>1</td>
+<td><input type="text" class="input-observaciones " title="Ingresa Ubicacion"></td>
+<td class="clickable" data-row="1" data-col="SI" data-group="estado"></td>
+<td class="clickable" data-row="1" data-col="NO" data-group="estado"></td>
+<td class="clickable" data-row="1" data-col="SI" data-group="iluminacion"></td>
+<td class="clickable" data-row="1" data-col="NO" data-group="iluminacion"></td>
+<td class="clickable" data-row="1" data-col="SI" data-group="conectado"></td>
+<td class="clickable" data-row="1" data-col="NO" data-group="conectado"></td>
+<td class="clickable" data-row="1" data-col="SI" data-group="funciona"></td>
+<td class="clickable" data-row="1" data-col="NO" data-group="funciona"></td>
+<td class="clickable" data-row="1" data-col="SI" data-group="rota"></td>
+<td class="clickable" data-row="1" data-col="NO" data-group="rota"></td>
+<td class="clickable" data-row="1" data-col="SI" data-group="sucia"></td>
+<td class="clickable" data-row="1" data-col="NO" data-group="sucia"></td>
+<td><input type="text" class="input-observaciones " title="Ingresa Observaciones"></td>
+</tr>
+<tr>
+<td>2</td>
+<td><input type="text" class="input-observaciones " title="Ingresa Ubicacion"></td>
+<td class="clickable" data-row="2" data-col="SI" data-group="estado"></td>
+<td class="clickable" data-row="2" data-col="NO" data-group="estado"></td>
+<td class="clickable" data-row="2" data-col="SI" data-group="iluminacion"></td>
+<td class="clickable" data-row="2" data-col="NO" data-group="iluminacion"></td>
+<td class="clickable" data-row="2" data-col="SI" data-group="conectado"></td>
+<td class="clickable" data-row="2" data-col="NO" data-group="conectado"></td>
+<td class="clickable" data-row="2" data-col="SI" data-group="funciona"></td>
+<td class="clickable" data-row="2" data-col="NO" data-group="funciona"></td>
+<td class="clickable" data-row="2" data-col="SI" data-group="rota"></td>
+<td class="clickable" data-row="2" data-col="NO" data-group="rota"></td>
+<td class="clickable" data-row="2" data-col="SI" data-group="sucia"></td>
+<td class="clickable" data-row="2" data-col="NO" data-group="sucia"></td>
+<td><input type="text" class="input-observaciones " title="Ingresa Observaciones"></td>
+</tr>
+<tr>
+<td>3</td>
+<td><input type="text" class="input-observaciones " title="Ingresa Ubicacion"></td>
+<td class="clickable" data-row="3" data-col="SI" data-group="estado"></td>
+<td class="clickable" data-row="3" data-col="NO" data-group="estado"></td>
+<td class="clickable" data-row="3" data-col="SI" data-group="iluminacion"></td>
+<td class="clickable" data-row="3" data-col="NO" data-group="iluminacion"></td>
+<td class="clickable" data-row="3" data-col="SI" data-group="conectado"></td>
+<td class="clickable" data-row="3" data-col="NO" data-group="conectado"></td>
+<td class="clickable" data-row="3" data-col="SI" data-group="funciona"></td>
+<td class="clickable" data-row="3" data-col="NO" data-group="funciona"></td>
+<td class="clickable" data-row="3" data-col="SI" data-group="rota"></td>
+<td class="clickable" data-row="3" data-col="NO" data-group="rota"></td>
+<td class="clickable" data-row="3" data-col="SI" data-group="sucia"></td>
+<td class="clickable" data-row="3" data-col="NO" data-group="sucia"></td>
+<td><input type="text" class="input-observaciones " title="Ingresa Observaciones"></td>
+</tr>
+<tr>
+<td>4</td>
+<td><input type="text" class="input-observaciones " title="Ingresa Ubicacion"></td>
+<td class="clickable" data-row="4" data-col="SI" data-group="estado"></td>
+<td class="clickable" data-row="4" data-col="NO" data-group="estado"></td>
+<td class="clickable" data-row="4" data-col="SI" data-group="iluminacion"></td>
+<td class="clickable" data-row="4" data-col="NO" data-group="iluminacion"></td>
+<td class="clickable" data-row="4" data-col="SI" data-group="conectado"></td>
+<td class="clickable" data-row="4" data-col="NO" data-group="conectado"></td>
+<td class="clickable" data-row="4" data-col="SI" data-group="funciona"></td>
+<td class="clickable" data-row="4" data-col="NO" data-group="funciona"></td>
+<td class="clickable" data-row="4" data-col="SI" data-group="rota"></td>
+<td class="clickable" data-row="4" data-col="NO" data-group="rota"></td>
+<td class="clickable" data-row="4" data-col="SI" data-group="sucia"></td>
+<td class="clickable" data-row="4" data-col="NO" data-group="sucia"></td>
+<td><input type="text" class="input-observaciones " title="Ingresa Observaciones"></td>
+</tr>
+<tr>
+<td>5</td>
+<td><input type="text" class="input-observaciones " title="Ingresa Ubicacion"></td>
+<td class="clickable" data-row="5" data-col="SI" data-group="estado"></td>
+<td class="clickable" data-row="5" data-col="NO" data-group="estado"></td>
+<td class="clickable" data-row="5" data-col="SI" data-group="iluminacion"></td>
+<td class="clickable" data-row="5" data-col="NO" data-group="iluminacion"></td>
+<td class="clickable" data-row="5" data-col="SI" data-group="conectado"></td>
+<td class="clickable" data-row="5" data-col="NO" data-group="conectado"></td>
+<td class="clickable" data-row="5" data-col="SI" data-group="funciona"></td>
+<td class="clickable" data-row="5" data-col="NO" data-group="funciona"></td>
+<td class="clickable" data-row="5" data-col="SI" data-group="rota"></td>
+<td class="clickable" data-row="5" data-col="NO" data-group="rota"></td>
+<td class="clickable" data-row="5" data-col="SI" data-group="sucia"></td>
+<td class="clickable" data-row="5" data-col="NO" data-group="sucia"></td>
+<td><input type="text" class="input-observaciones " title="Ingresa Observaciones"></td>
+</tr>
+<tr>
+<td>6</td>
+<td><input type="text" class="input-observaciones " title="Ingresa Ubicacion"></td>
+<td class="clickable" data-row="6" data-col="SI" data-group="estado"></td>
+<td class="clickable" data-row="6" data-col="NO" data-group="estado"></td>
+<td class="clickable" data-row="6" data-col="SI" data-group="iluminacion"></td>
+<td class="clickable" data-row="6" data-col="NO" data-group="iluminacion"></td>
+<td class="clickable" data-row="6" data-col="SI" data-group="conectado"></td>
+<td class="clickable" data-row="6" data-col="NO" data-group="conectado"></td>
+<td class="clickable" data-row="6" data-col="SI" data-group="funciona"></td>
+<td class="clickable" data-row="6" data-col="NO" data-group="funciona"></td>
+<td class="clickable" data-row="6" data-col="SI" data-group="rota"></td>
+<td class="clickable" data-row="6" data-col="NO" data-group="rota"></td>
+<td class="clickable" data-row="6" data-col="SI" data-group="sucia"></td>
+<td class="clickable" data-row="6" data-col="NO" data-group="sucia"></td>
+<td><input type="text" class="input-observaciones " title="Ingresa Observaciones"></td>
+</tr>
+<tr>
+<td>7</td>
+<td><input type="text" class="input-observaciones " title="Ingresa Ubicacion"></td>
+<td class="clickable" data-row="7" data-col="SI" data-group="estado"></td>
+<td class="clickable" data-row="7" data-col="NO" data-group="estado"></td>
+<td class="clickable" data-row="7" data-col="SI" data-group="iluminacion"></td>
+<td class="clickable" data-row="7" data-col="NO" data-group="iluminacion"></td>
+<td class="clickable" data-row="7" data-col="SI" data-group="conectado"></td>
+<td class="clickable" data-row="7" data-col="NO" data-group="conectado"></td>
+<td class="clickable" data-row="7" data-col="SI" data-group="funciona"></td>
+<td class="clickable" data-row="7" data-col="NO" data-group="funciona"></td>
+<td class="clickable" data-row="7" data-col="SI" data-group="rota"></td>
+<td class="clickable" data-row="7" data-col="NO" data-group="rota"></td>
+<td class="clickable" data-row="7" data-col="SI" data-group="sucia"></td>
+<td class="clickable" data-row="7" data-col="NO" data-group="sucia"></td>
+<td><input type="text" class="input-observaciones " title="Ingresa Observaciones"></td>
+</tr>
+<tr>
+<td>8</td>
+<td><input type="text" class="input-observaciones " title="Ingresa Ubicacion"></td>
+<td class="clickable" data-row="8" data-col="SI" data-group="estado"></td>
+<td class="clickable" data-row="8" data-col="NO" data-group="estado"></td>
+<td class="clickable" data-row="8" data-col="SI" data-group="iluminacion"></td>
+<td class="clickable" data-row="8" data-col="NO" data-group="iluminacion"></td>
+<td class="clickable" data-row="8" data-col="SI" data-group="conectado"></td>
+<td class="clickable" data-row="8" data-col="NO" data-group="conectado"></td>
+<td class="clickable" data-row="8" data-col="SI" data-group="funciona"></td>
+<td class="clickable" data-row="8" data-col="NO" data-group="funciona"></td>
+<td class="clickable" data-row="8" data-col="SI" data-group="rota"></td>
+<td class="clickable" data-row="8" data-col="NO" data-group="rota"></td>
+<td class="clickable" data-row="8" data-col="SI" data-group="sucia"></td>
+<td class="clickable" data-row="8" data-col="NO" data-group="sucia"></td>
+<td><input type="text" class="input-observaciones " title="Ingresa Observaciones"></td>
+</tr>
+<tr>
+<td>9</td>
+<td><input type="text" class="input-observaciones " title="Ingresa Ubicacion"></td>
+<td class="clickable" data-row="9" data-col="SI" data-group="estado"></td>
+<td class="clickable" data-row="9" data-col="NO" data-group="estado"></td>
+<td class="clickable" data-row="9" data-col="SI" data-group="iluminacion"></td>
+<td class="clickable" data-row="9" data-col="NO" data-group="iluminacion"></td>
+<td class="clickable" data-row="9" data-col="SI" data-group="conectado"></td>
+<td class="clickable" data-row="9" data-col="NO" data-group="conectado"></td>
+<td class="clickable" data-row="9" data-col="SI" data-group="funciona"></td>
+<td class="clickable" data-row="9" data-col="NO" data-group="funciona"></td>
+<td class="clickable" data-row="9" data-col="SI" data-group="rota"></td>
+<td class="clickable" data-row="9" data-col="NO" data-group="rota"></td>
+<td class="clickable" data-row="9" data-col="SI" data-group="sucia"></td>
+<td class="clickable" data-row="9" data-col="NO" data-group="sucia"></td>
+<td><input type="text" class="input-observaciones " title="Ingresa Observaciones"></td>
+</tr>
+<tr>
+<td>10</td>
+<td><input type="text" class="input-observaciones " title="Ingresa Ubicacion"></td>
+<td class="clickable" data-row="10" data-col="SI" data-group="estado"></td>
+<td class="clickable" data-row="10" data-col="NO" data-group="estado"></td>
+<td class="clickable" data-row="10" data-col="SI" data-group="iluminacion"></td>
+<td class="clickable" data-row="10" data-col="NO" data-group="iluminacion"></td>
+<td class="clickable" data-row="10" data-col="SI" data-group="conectado"></td>
+<td class="clickable" data-row="10" data-col="NO" data-group="conectado"></td>
+<td class="clickable" data-row="10" data-col="SI" data-group="funciona"></td>
+<td class="clickable" data-row="10" data-col="NO" data-group="funciona"></td>
+<td class="clickable" data-row="10" data-col="SI" data-group="rota"></td>
+<td class="clickable" data-row="10" data-col="NO" data-group="rota"></td>
+<td class="clickable" data-row="10" data-col="SI" data-group="sucia"></td>
+<td class="clickable" data-row="10" data-col="NO" data-group="sucia"></td>
+<td><input type="text" class="input-observaciones " title="Ingresa Observaciones"></td>
+</tr>
+<tr>
+<td></td>
+<td>CONCLUSIONES</td>
+<td class="merged" rowspan="1" colspan="13"><textarea class="conclusiones" id="conclusiones" placeholder="Escriba aquí las conclusiones de la inspección..."></textarea></td>
+</tr>
+<tr>
+<td></td>
+<td class="merged" rowspan="1" colspan="14"></td>
+</tr>
+<tr>
+<td></td>
+<td class="merged" rowspan="1" colspan="4">FIRMA RESPONSABLE DE LA INSPECCIÓN</td>
+    <td class="merged" rowspan="1" colspan="10">
+    USUARIO DEL VEHÍCULO OFICIAL FIRMA:
+                <canvas id="signatureCanvas" width="200" height="100"></canvas>
+                <div>
+                    <button type="button" onclick="clearCanvas('signatureCanvas')">Limpiar</button>
+                    <button type="button" onclick="downloadSignature('signatureCanvas')">Descargar Firma</button>
+                </div>
+    </td>
+</tr>
+<tr>
+<td></td>
+<td class="merged" rowspan="1" colspan="4">NOMBRE DEL RESPONSABLE DE SEGURIDAD</td>
+<td class="merged" rowspan="1" colspan="10"></td>
+</tr>
+<tr>
+<td></td>
+<td class="merged" rowspan="1" colspan="4">NOMBRE DEL RESPONSABLE DEL CENTRO DE TRABAJO</td>
+<td class="merged" rowspan="1" colspan="10"></td>
+</tr>
+</table>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const clickableCells = document.querySelectorAll('.clickable');
+    
+    clickableCells.forEach(cell => {
+        cell.addEventListener('click', function() {
+            const row = this.getAttribute('data-row');
+            const col = this.getAttribute('data-col');
+            const group = this.getAttribute('data-group');
+            
+            // Obtener todas las celdas del mismo grupo en la misma fila
+            const groupCells = document.querySelectorAll(`.clickable[data-row="${row}"][data-group="${group}"]`);
+            
+            // Limpiar todas las celdas del grupo
+            groupCells.forEach(c => {
+                c.textContent = '';
+                c.classList.remove('selected-check', 'selected-cross');
+            });
+            
+            // Marcar la celda seleccionada
+            if (col === 'SI') {
+                this.textContent = '✓';
+                this.classList.add('selected-check');
+            } else {
+                this.textContent = '✗';
+                this.classList.add('selected-cross');
+            }
+        });
+    });
+});
+
+
+
+///FIRMAS
+// Funcionalidad de dibujo en el canvas
+    let isDrawing = false;
+    let lastX = 0;
+    let lastY = 0;
+
+    function startDrawing(e, canvasId) {
+        isDrawing = true;
+        [lastX, lastY] = getMousePos(e, canvasId);
+    }
+
+    function draw(e, canvasId) {
+        if (!isDrawing) return;
+
+        const canvas = document.getElementById(canvasId);
+        const ctx = canvas.getContext('2d');
+        const [x, y] = getMousePos(e, canvasId);
+
+        ctx.beginPath();
+        ctx.moveTo(lastX, lastY);
+        ctx.lineTo(x, y);
+        ctx.strokeStyle = '#000';
+        ctx.lineWidth = 2;
+        ctx.lineCap = 'round';
+        ctx.stroke();
+
+        [lastX, lastY] = [x, y];
+    }
+
+    function stopDrawing() {
+        isDrawing = false;
+    }
+
+    function getMousePos(e, canvasId) {
+        const canvas = document.getElementById(canvasId);
+        const rect = canvas.getBoundingClientRect();
+        const clientX = e.clientX || (e.touches && e.touches[0].clientX);
+        const clientY = e.clientY || (e.touches && e.touches[0].clientY);
+        return [
+            (clientX - rect.left) * (canvas.width / rect.width),
+            (clientY - rect.top) * (canvas.height / rect.height)
+        ];
+    }
+
+    function clearCanvas(canvasId) {
+        const canvas = document.getElementById(canvasId);
+        const ctx = canvas.getContext('2d');
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+    }
+
+    function downloadSignature(canvasId) {
+        const canvas = document.getElementById(canvasId);
+        const link = document.createElement('a');
+        link.download = canvasId === 'signatureCanvas' ? 'firma_usuario.png' : canvasId === 'adminSignatureCanvas' ? 'firma_admin.png' : 'firma_revisor.png';
+        link.href = canvas.toDataURL('image/png');
+        link.click();
+    }
+
+
+     // Configurar eventos del canvas
+        const canvases = ['signatureCanvas', 'adminSignatureCanvas', 'admin3SignatureCanvas','admin2SignatureCanvas'];
+        canvases.forEach(canvasId => {
+            const canvas = document.getElementById(canvasId);
+            if (canvas) {
+                canvas.addEventListener('mousedown', (e) => startDrawing(e, canvasId));
+                canvas.addEventListener('mousemove', (e) => draw(e, canvasId));
+                canvas.addEventListener('mouseup', stopDrawing);
+                canvas.addEventListener('mouseout', stopDrawing);
+
+                // Soporte para dispositivos táctiles
+                canvas.addEventListener('touchstart', (e) => {
+                    e.preventDefault();
+                    startDrawing(e, canvasId);
+                });
+                canvas.addEventListener('touchmove', (e) => {
+                    e.preventDefault();
+                    draw(e, canvasId);
+                });
+                canvas.addEventListener('touchend', stopDrawing);
+            }
+        });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</body>
+</html>

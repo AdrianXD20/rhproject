@@ -1,128 +1,176 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Descargar PDF con Firmas</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-        }
-        #content {
-            width: 100%;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        .signature-section {
-            margin: 20px 0;
-            border: 1px solid #ccc;
-            padding: 10px;
-        }
-        .signature-input {
-            margin: 10px 0;
-        }
-        button {
-            padding: 10px 20px;
-            font-size: 16px;
-            cursor: pointer;
-        }
-    </style>
+<meta charset="UTF-8">
+<title>Revisión Mensual de Extintores</title>
+<style>
+  body { font-size: 10px; margin: 0; padding: 20px; font-family: Arial, sans-serif; }
+  .grid { display: grid; grid-template-columns: repeat(34, 1fr); width: 100%; }
+  .cell { border: 1px solid #434242; padding: 8px; min-height: 20px; }
+  .empty { border: none; }
+  .header { background-color: #fffefe; font-weight: bold; }
+  .merged { background-color: #f0f0f0; grid-column: span var(--span, 1); }
+  input, select { width: 100%; box-sizing: border-box; }
+  .input-capacidad, .input-numeral { width: 30px; }
+  .input-agente { width: 50px; }
+  .input-date { width: 80px; }
+</style>
 </head>
 <body>
-    <div id="content">
-        <h1>Documento con Firmas</h1>
-        <div class="signature-section">
-            <h3>REVISÓ NOMBRE FIRMA Y RPE</h3>
-            <div class="signature-input">
-                <label for="revisoImage">Subir firma:</label>
-                <input type="file" id="revisoImage" accept="image/*" onchange="loadImage('revisoImage', 'revisoSignature')">
-                <input type="text" id="revisoName" placeholder="Escribe tu nombre">
-            </div>
-            <div id="revisoSignature"></div>
-        </div>
-        <div class="signature-section">
-            <table style="width: 100%; border-collapse: collapse;">
-                <tr>
-                    <td style="border: 1px solid #ccc; padding: 10px; width: 50%;">
-                        <h3>USUARIO DEL VEHÍCULO OFICIAL FIRMA Y RPE</h3>
-                        <div class="signature-input">
-                            <label for="usuarioImage">Subir firma:</label>
-                            <input type="file" id="usuarioImage" accept="image/*" onchange="loadImage('usuarioImage', 'usuarioSignature')">
-                            <input type="text" id="usuarioName" placeholder="Escribe tu nombre">
-                        </div>
-                        <div id="usuarioSignature"></div>
-                    </td>
-                    <td style="border: 1px solid #ccc; padding: 10px; width: 50%; vertical-align: top;">
-                        <h3>ADMINISTRADOR DE PV RPE</h3>
-                        <p>Lic. Ntra. Guadalupe Chan Couoh - GEY8</p>
-                    </td>
-                </tr>
-            </table>
-        </div>
-    </div>
-    <button onclick="generatePDF()">Descargar PDF</button>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-    <script>
-        function loadImage(inputId, signatureId) {
-            const input = document.getElementById(inputId);
-            const signatureDiv = document.getElementById(signatureId);
-            const file = input.files[0];
-            if (file) {
-                const reader = new FileReader();
-                reader.onload = function(e) {
-                    const img = document.createElement('img');
-                    img.src = e.target.result;
-                    img.style.maxWidth = '200px';
-                    signatureDiv.innerHTML = '';
-                    signatureDiv.appendChild(img);
-                };
-                reader.readAsDataURL(file);
-            }
-        }
+<!-- Fila 1: Título principal -->
+<div class="grid">
+  <div class="cell merged" style="--span: 27">Revisión Mensual de Extintores</div>
+  <div class="cell empty" style="--span: 7"></div>
+</div>
 
-        async function generatePDF() {
-            const { jsPDF } = window.jspdf;
-            const content = document.getElementById('content');
-            const pdfWidth = 210; // Ancho de A4 en mm
-            const pdfHeight = 297; // Alto de A4 en mm
+<!-- Fila 2: Vacía -->
+<div class="grid">
+  <div class="cell empty" style="--span: 34"></div>
+</div>
 
-            // Convertir el contenido HTML a canvas
-            const canvas = await html2canvas(content, {
-                scale: 2,
-                useCORS: true,
-                windowWidth: content.scrollWidth,
-                windowHeight: content.scrollHeight
-            });
+<!-- Fila 3: Centro de trabajo -->
+<div class="grid">
+  <div class="cell merged" style="--span: 27">Centro de Trabajo: ADMINISTRACIÓN Y FINANZAS</div>
+  <div class="cell empty" style="--span: 7"></div>
+</div>
 
-            const imgData = canvas.toDataURL('image/png');
-            const imgWidth = canvas.width;
-            const imgHeight = canvas.height;
+<!-- Filas 4-7: Estado de los extintores -->
+<div class="grid">
+  <div class="cell empty" style="--span: 7"></div>
+  <div class="cell merged" style="--span: 3">ESTATUS</div>
+  <div class="cell empty" style="--span: 24"></div>
+</div>
 
-            // Calcular la escala para que quepa en una sola página
-            const ratio = Math.min(pdfWidth / imgWidth, pdfHeight / imgHeight);
-            const scaledWidth = imgWidth * ratio;
-            const scaledHeight = imgHeight * ratio;
+<div class="grid">
+  <div class="cell empty" style="--span: 7"></div>
+  <div class="cell merged" style="--span: 2">Remplazar</div>
+  <div class="cell">X</div>
+  <div class="cell empty" style="--span: 24"></div>
+</div>
 
-            // Calcular posición para centrar la imagen
-            const xOffset = (pdfWidth - scaledWidth) / 2;
-            const yOffset = (pdfHeight - scaledHeight) / 2;
+<div class="grid">
+  <div class="cell empty" style="--span: 7"></div>
+  <div class="cell merged" style="--span: 2">Regular</div>
+  <div class="cell">R</div>
+  <div class="cell empty" style="--span: 24"></div>
+</div>
 
-            // Crear el PDF
-            const pdf = new jsPDF({
-                orientation: 'portrait',
-                unit: 'mm',
-                format: [pdfWidth, pdfHeight]
-            });
+<div class="grid">
+  <div class="cell empty" style="--span: 7"></div>
+  <div class="cell merged" style="--span: 2">Bueno</div>
+  <div class="cell">B</div>
+  <div class="cell merged" style="--span: 5">Fecha de Elaboración:</div>
+  <div class="cell merged" style="--span: 4"><input type="date" class="input-date"></div>
+  <div class="cell empty" style="--span: 14"></div>
+</div>
 
-            // Añadir la imagen al PDF, centrada
-            pdf.addImage(imgData, 'PNG', xOffset, yOffset, scaledWidth, scaledHeight);
+<!-- Encabezados de columnas -->
+<div class="grid">
+  <div class="cell header merged" style="--span: 1">Nº</div>
+  <div class="cell header merged" style="--span: 1">Capacidad (kg)</div>
+  <div class="cell header merged" style="--span: 2">Ubicación / Sala</div>
+  <div class="cell header merged" style="--span: 1">Agente Extintor</div>
+  <div class="cell header merged" style="--span: 1">Numeral</div>
+  <div class="cell header merged" style="--span: 3">Estado Físico</div>
+  <div class="cell header merged" style="--span: 4">Señalización</div>
+  <div class="cell header merged" style="--span: 1">Fecha de Recarga</div>
+  <div class="cell header merged" style="--span: 1">Vencimiento de Recarga</div>
+  <div class="cell header merged" style="--span: 1">Soporte</div>
+  <div class="cell header merged" style="--span: 1">Asa Móvil</div>
+  <div class="cell header merged" style="--span: 1">Asa Fija</div>
+  <div class="cell header merged" style="--span: 1">Precinto de Seguridad</div>
+  <div class="cell header merged" style="--span: 1">Seguro</div>
+  <div class="cell header merged" style="--span: 1">Manómetro</div>
+  <div class="cell header merged" style="--span: 1">Manguera</div>
+  <div class="cell header merged" style="--span: 1">Abrazaderas</div>
+  <div class="cell header merged" style="--span: 1">Boquilla o Tobera</div>
+  <div class="cell header merged" style="--span: 1">Ruedas</div>
+  <div class="cell header merged" style="--span: 2">Observaciones</div>
+</div>
 
-            // Descargar el PDF
-            pdf.save('documento_firmas.pdf');
-        }
-    </script>
+<!-- Subencabezados -->
+<div class="grid">
+  <div class="cell empty" style="--span: 5"></div>
+  <div class="cell header">Corrosión</div>
+  <div class="cell header">Pintura</div>
+  <div class="cell header">Limpieza</div>
+  <div class="cell header">Etiquetas Visible</div>
+  <div class="cell header">Etiquetas Buen estado</div>
+  <div class="cell header">Informacion Etiqueta</div>
+  <div class="cell header">Señalamiento</div>
+  <div class="cell empty" style="--span: 19"></div>
+</div>
+
+<!-- Formato fechas -->
+<div class="grid">
+  <div class="cell empty" style="--span: 12"></div>
+  <div class="cell">MM/AA</div>
+  <div class="cell">MM/AA</div>
+  <div class="cell empty" style="--span: 20"></div>
+</div>
+
+<!-- Datos de extintores (ejemplo para 2 filas) -->
+<div class="grid">
+  <div class="cell">1</div>
+  <div class="cell"><input type="text" class="input-capacidad"></div>
+  <div class="cell merged" style="--span: 2"><input type="text"></div>
+  <div class="cell"><input type="text" class="input-agente"></div>
+  <div class="cell"><input type="text" class="input-numeral"></div>
+  <div class="cell"><select><option>Estatus</option><option>X</option><option>R</option><option>B</option><option>NA</option></select></div>
+  <div class="cell"><select><option>Estatus</option><option>X</option><option>R</option><option>B</option><option>NA</option></select></div>
+  <div class="cell"><select><option>Estatus</option><option>X</option><option>R</option><option>B</option><option>NA</option></select></div>
+  <div class="cell"><select><option>Estatus</option><option>X</option><option>R</option><option>B</option><option>NA</option></select></div>
+  <div class="cell"><select><option>Estatus</option><option>X</option><option>R</option><option>B</option><option>NA</option></select></div>
+  <div class="cell"><select><option>Estatus</option><option>X</option><option>R</option><option>B</option><option>NA</option></select></div>
+  <div class="cell"><select><option>Estatus</option><option>X</option><option>R</option><option>B</option><option>NA</option></select></div>
+  <div class="cell"><input type="date" class="input-date"></div>
+  <div class="cell"><input type="date"></div>
+  <div class="cell">B</div>
+  <div class="cell">B</div>
+  <div class="cell">B</div>
+  <div class="cell">B</div>
+  <div class="cell">B</div>
+  <div class="cell">NA</div>
+  <div class="cell">B</div>
+  <div class="cell">B</div>
+  <div class="cell">B</div>
+  <div class="cell">NA</div>
+  <div class="cell merged" style="--span: 2">Vencido</div>
+</div>
+
+<div class="grid">
+  <div class="cell">2</div>
+  <div class="cell">6</div>
+  <div class="cell merged" style="--span: 2">SADECI</div>
+  <div class="cell">PQS</div>
+  <div class="cell">05</div>
+  <div class="cell">B</div>
+  <div class="cell">B</div>
+  <div class="cell">B</div>
+  <div class="cell">B</div>
+  <div class="cell">B</div>
+  <div class="cell">B</div>
+  <div class="cell">B</div>
+  <div class="cell">2023-11-01</div>
+  <div class="cell">2024-11-01</div>
+  <div class="cell">B</div>
+  <div class="cell">B</div>
+  <div class="cell">B</div>
+  <div class="cell">B</div>
+  <div class="cell">B</div>
+  <div class="cell">B</div>
+  <div class="cell">B</div>
+  <div class="cell">B</div>
+  <div class="cell">B</div>
+  <div class="cell">NA</div>
+  <div class="cell merged" style="--span: 2">Vencido</div>
+</div>
+
+<!-- Nota final -->
+<div class="grid">
+  <div class="cell" style="--span: 34">Nota: Todos los incumplimientos a la Normatividad vigente se debe realizar Formato 13 en SISST.</div>
+</div>
+
 </body>
 </html>

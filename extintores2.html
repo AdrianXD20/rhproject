@@ -1,0 +1,1252 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Excel to HTML</title>
+<style>
+body { font-size: 10px; }
+table { border-collapse: collapse; width: 100%; margin: 20px 0; }
+th, td { border: 1px solid #434242; padding: 8px; text-align: left; }
+th { background-color: #fffefe; font-weight: bold; }
+.merged { background-color: #f0f0f0; }
+td:empty { border: none; }
+.input-capacidad,.input-numeral {
+    width: 15px; /* Ajusta el ancho según necesites */
+}
+.input-agente{
+    width: 30px;
+}
+.input-date{
+    width: 80px;
+}
+.input-observaciones {
+    width: 90px; /* Ajusta el ancho según necesites */
+}
+.form-select-corto{
+    width: 30;
+}
+
+.vertical-text {
+    writing-mode: vertical-rl; /* Texto vertical de abajo hacia arriba */
+    transform: rotate(180deg); /* Rota 180 grados para que sea de arriba hacia abajo */
+    text-align: center;
+    white-space: nowrap;
+    padding: 5px 2px;
+  }
+  
+  /* Alternativa más compatible */
+  .vertical-text-alt {
+    transform: rotate(-90deg);
+    transform-origin: center center;
+    width: 20px;
+    white-space: nowrap;
+    display: inline-block;
+    position: relative;
+    margin: 5px 0;
+  }
+
+
+  /*Firma*/
+  #signatureCanvas, #adminSignatureCanvas, #admin2SignatureCanvas, #admin3SignatureCanvas{
+            border: 1px solid #434242;
+            background-color: #fff;
+            border-radius: 4px;
+        }
+</style>
+</head>
+<body class="p-4 font-sans bg-gray-100">
+<div id="hola" class="max-w-3xl mx-auto bg-white p-4 shadow-md">
+<table class="w-full mb-3 text-xs">
+<tr>
+<td class="merged" rowspan="2" colspan="27">Revisión Mensual de Extintores</td>
+</tr>
+<tr>
+</tr>
+<tr>
+<td class="merged" rowspan="1" colspan="27">Centro de Trabajo:  ADMINISTRACIÓN Y FINANZAS</td>
+</tr>
+<tr>
+    <td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td class="merged" rowspan="1" colspan="3">ESTATUS </td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td class="merged" rowspan="1" colspan="2">Remplazar</td>
+<td>X</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td class="merged" rowspan="1" colspan="2">Regular</td>
+<td>R</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td class="merged" rowspan="1" colspan="2">Bueno</td>
+<td>B</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td class="merged" rowspan="1" colspan="5">Fecha de Elaboración: </td>
+<td class="merged" rowspan="1" colspan="4"><input type="date" class="border p-1" placeholder="Ingresa Fecha"></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td class="merged" rowspan="1" colspan="2">No aplica </td>
+<td>NA</td>
+</tr>
+<tr>
+    <td></td>
+</tr>
+<tr>
+<td class="merged" rowspan="3" colspan="1">Nº</td>
+<td class="merged" rowspan="3" colspan="1">Capacidad (kg)</td>
+<td class="merged" rowspan="3" colspan="2">Ubicación / Sala</td>
+<td class="merged" rowspan="3" colspan="1">Agente Extintor </td>
+<td class="merged" rowspan="3" colspan="1">Numeral</td>
+<td class="merged" rowspan="1" colspan="3">Estado Físico </td>
+<td class="merged" rowspan="1" colspan="4">Señalización</td>
+<td class="merged" rowspan="2" colspan="1">Fecha de Recarga </td>
+<td class="merged" rowspan="2" colspan="1">Vencimiento de Recarga</td>
+<td class="merged" rowspan="3" colspan="1">Soporte </td>
+<td class="merged" rowspan="3" colspan="1">Asa Móvil</td>
+<td class="merged" rowspan="3" colspan="1">Asa Fija </td>
+<td class="merged" rowspan="3" colspan="1">Precinto de Seguridad</td>
+<td class="merged" rowspan="3" colspan="1">Seguro</td>
+<td class="merged" rowspan="3" colspan="1">Manómetro</td>
+<td class="merged" rowspan="3" colspan="1">Manguera</td>
+<td class="merged" rowspan="3" colspan="1">Abrazaderas</td>
+<td class="merged" rowspan="3" colspan="1">Boquilla o Tobera</td>
+<td class="merged" rowspan="3" colspan="1">Ruedas</td>
+<td class="merged" rowspan="3" colspan="2">Observaciones </td>
+</tr>
+<tr>
+<td class="merged" rowspan="2" colspan="1">Corrosión</td>
+<td class="merged" rowspan="2" colspan="1">Pintura </td>
+<td class="merged" rowspan="2" colspan="1">Limpieza </td>
+<td class="merged" rowspan="2" colspan="1">Etiquetas  Visible</td>
+<td class="merged" rowspan="2" colspan="1">Etiquetas  Buen estado </td>
+<td class="merged" rowspan="2" colspan="1">Informacion  Etiqueta  </td>
+<td class="merged" rowspan="2" colspan="1">Señalamiento</td>
+</tr>
+<tr>
+<td>MM/AA</td>
+<td>MM/AA</td>
+</tr>
+<tr>
+<td>1</td>
+<td><input type="text" class="input-capacidad " title="Ingresa Capacidad"></td>
+<td class="merged" rowspan="1" colspan="2"><input type="text" title="Ingresar área" class="input-area"></td>
+<td><input type="text" class="input-agente" title="Ingresar Agente"></td>
+<td><input type="text" class="input-numeral" title="Ingresar Numeral"></td>
+<td><select class="form-select form-select-corto" name="opciones-corrosión">
+    <option value="opcion1">Estatus</option>
+    <option value="opcion2">X</option>
+    <option value="opcion3">R</option>
+    <option value="opcion4">B</option>
+    <option value="opcion5">NA</option>
+</select></td>
+<td><select class="form-select" name="opciones">
+    <option value="opcion1">Estatus</option>
+    <option value="opcion2">X</option>
+    <option value="opcion3">R</option>
+    <option value="opcion4">B</option>
+    <option value="opcion5">NA</option>
+</select></td>
+<td><select class="form-select" name="opciones">
+    <option value="opcion1">Estatus</option>
+    <option value="opcion2">X</option>
+    <option value="opcion3">R</option>
+    <option value="opcion4">B</option>
+    <option value="opcion5">NA</option>
+</select></td>
+<td><select class="form-select" name="opciones">
+    <option value="opcion1">Estatus</option>
+    <option value="opcion2">X</option>
+    <option value="opcion3">R</option>
+    <option value="opcion4">B</option>
+    <option value="opcion5">NA</option>
+</select></td>
+<td><select class="form-select" name="opciones">
+    <option value="opcion1">Estatus</option>
+    <option value="opcion2">X</option>
+    <option value="opcion3">R</option>
+    <option value="opcion4">B</option>
+    <option value="opcion5">NA</option>
+</select></td>
+<td><select class="form-select" name="opciones">
+    <option value="opcion1">Estatus</option>
+    <option value="opcion2">X</option>
+    <option value="opcion3">R</option>
+    <option value="opcion4">B</option>
+    <option value="opcion5">NA</option>
+</select></td>
+<td><select class="form-select" name="opciones">
+    <option value="opcion1">Estatus</option>
+    <option value="opcion2">X</option>
+    <option value="opcion3">R</option>
+    <option value="opcion4">B</option>
+    <option value="opcion5">NA</option>
+</select></td>
+<td><input type="date" class="input-date" placeholder="Ingresa Fecha"></td>
+<td><input type="date" class="input-date" placeholder="Ingresa Fecha"></td>
+<td><select class="form-select" name="opciones">
+    <option value="opcion1">Estatus</option>
+    <option value="opcion2">X</option>
+    <option value="opcion3">R</option>
+    <option value="opcion4">B</option>
+    <option value="opcion5">NA</option>
+</select></td>
+<td><select class="form-select" name="opciones">
+    <option value="opcion1">Estatus</option>
+    <option value="opcion2">X</option>
+    <option value="opcion3">R</option>
+    <option value="opcion4">B</option>
+    <option value="opcion5">NA</option>
+</select></td>
+<td><select class="form-select" name="opciones">
+    <option value="opcion1">Estatus</option>
+    <option value="opcion2">X</option>
+    <option value="opcion3">R</option>
+    <option value="opcion4">B</option>
+    <option value="opcion5">NA</option>
+</select></td>
+<td><select class="form-select" name="opciones">
+    <option value="opcion1">Estatus</option>
+    <option value="opcion2">X</option>
+    <option value="opcion3">R</option>
+    <option value="opcion4">B</option>
+    <option value="opcion5">NA</option>
+</select></td>
+<td><select class="form-select" name="opciones">
+    <option value="opcion1">Estatus</option>
+    <option value="opcion2">X</option>
+    <option value="opcion3">R</option>
+    <option value="opcion4">B</option>
+    <option value="opcion5">NA</option>
+</select></td>
+<td><select class="form-select" name="opciones">
+    <option value="opcion1">Estatus</option>
+    <option value="opcion2">X</option>
+    <option value="opcion3">R</option>
+    <option value="opcion4">B</option>
+    <option value="opcion5">NA</option>
+</select></td>
+<td><select class="form-select" name="opciones">
+    <option value="opcion1">Estatus</option>
+    <option value="opcion2">X</option>
+    <option value="opcion3">R</option>
+    <option value="opcion4">B</option>
+    <option value="opcion5">NA</option>
+</select></td>
+<td><select class="form-select" name="opciones">
+    <option value="opcion1">Estatus</option>
+    <option value="opcion2">X</option>
+    <option value="opcion3">R</option>
+    <option value="opcion4">B</option>
+    <option value="opcion5">NA</option>
+</select></td>
+<td><select class="form-select" name="opciones">
+    <option value="opcion1">Estatus</option>
+    <option value="opcion2">X</option>
+    <option value="opcion3">R</option>
+    <option value="opcion4">B</option>
+    <option value="opcion5">NA</option>
+</select></td>
+<td><select class="form-select" name="opciones">
+    <option value="opcion1">Estatus</option>
+    <option value="opcion2">X</option>
+    <option value="opcion3">R</option>
+    <option value="opcion4">B</option>
+    <option value="opcion5">NA</option>
+</select></td>
+<td class="merged" rowspan="1" colspan="2"><input type="text" class="input-observaciones " title="Ingresa Observaciones"></td>
+</tr>
+<tr>
+<td>2</td>
+<td><input type="text" class="input-capacidad " title="Ingresa Capacidad"></td>
+<td class="merged" rowspan="1" colspan="2"><input type="text" class="input-area " title="Ingresa Área"></td>
+<td><input type="text" class="input-agente " title="Ingresa Agente"></td>
+<td><input type="text" class="input-numeral " title="Ingresa Numeral"></td>
+<td><select class="form-select" name="opciones">
+    <option value="opcion1">Estatus</option>
+    <option value="opcion2">X</option>
+    <option value="opcion3">R</option>
+    <option value="opcion4">B</option>
+    <option value="opcion5">NA</option>
+</select></td>
+<td><select class="form-select" name="opciones">
+    <option value="opcion1">Estatus</option>
+    <option value="opcion2">X</option>
+    <option value="opcion3">R</option>
+    <option value="opcion4">B</option>
+    <option value="opcion5">NA</option>
+</select></td>
+<td><select class="form-select" name="opciones">
+    <option value="opcion1">Estatus</option>
+    <option value="opcion2">X</option>
+    <option value="opcion3">R</option>
+    <option value="opcion4">B</option>
+    <option value="opcion5">NA</option>
+</select></td>
+<td><select class="form-select" name="opciones">
+    <option value="opcion1">Estatus</option>
+    <option value="opcion2">X</option>
+    <option value="opcion3">R</option>
+    <option value="opcion4">B</option>
+    <option value="opcion5">NA</option>
+</select></td>
+<td><select class="form-select" name="opciones">
+    <option value="opcion1">Estatus</option>
+    <option value="opcion2">X</option>
+    <option value="opcion3">R</option>
+    <option value="opcion4">B</option>
+    <option value="opcion5">NA</option>
+</select></td>
+<td><select class="form-select" name="opciones">
+    <option value="opcion1">Estatus</option>
+    <option value="opcion2">X</option>
+    <option value="opcion3">R</option>
+    <option value="opcion4">B</option>
+    <option value="opcion5">NA</option>
+</select></td>
+<td><select class="form-select" name="opciones">
+    <option value="opcion1">Estatus</option>
+    <option value="opcion2">X</option>
+    <option value="opcion3">R</option>
+    <option value="opcion4">B</option>
+    <option value="opcion5">NA</option>
+</select></td>
+<td><input type="date" class="input-date" placeholder="Ingresa Fecha"></td>
+<td><input type="date" class="input-date" placeholder="Ingresa Fecha"></td>
+<td><select class="form-select" name="opciones">
+    <option value="opcion1">Estatus</option>
+    <option value="opcion2">X</option>
+    <option value="opcion3">R</option>
+    <option value="opcion4">B</option>
+    <option value="opcion5">NA</option>
+</select></td>
+<td><select class="form-select" name="opciones">
+    <option value="opcion1">Estatus</option>
+    <option value="opcion2">X</option>
+    <option value="opcion3">R</option>
+    <option value="opcion4">B</option>
+    <option value="opcion5">NA</option>
+</select></td>
+<td><select class="form-select" name="opciones">
+    <option value="opcion1">Estatus</option>
+    <option value="opcion2">X</option>
+    <option value="opcion3">R</option>
+    <option value="opcion4">B</option>
+    <option value="opcion5">NA</option>
+</select></td>
+<td><select class="form-select" name="opciones">
+    <option value="opcion1">Estatus</option>
+    <option value="opcion2">X</option>
+    <option value="opcion3">R</option>
+    <option value="opcion4">B</option>
+    <option value="opcion5">NA</option>
+</select></td>
+<td><select class="form-select" name="opciones">
+    <option value="opcion1">Estatus</option>
+    <option value="opcion2">X</option>
+    <option value="opcion3">R</option>
+    <option value="opcion4">B</option>
+    <option value="opcion5">NA</option>
+</select></td>
+<td><select class="form-select" name="opciones">
+    <option value="opcion1">Estatus</option>
+    <option value="opcion2">X</option>
+    <option value="opcion3">R</option>
+    <option value="opcion4">B</option>
+    <option value="opcion5">NA</option>
+</select></td>
+<td><select class="form-select" name="opciones">
+    <option value="opcion1">Estatus</option>
+    <option value="opcion2">X</option>
+    <option value="opcion3">R</option>
+    <option value="opcion4">B</option>
+    <option value="opcion5">NA</option>
+</select></td>
+<td><select class="form-select" name="opciones">
+    <option value="opcion1">Estatus</option>
+    <option value="opcion2">X</option>
+    <option value="opcion3">R</option>
+    <option value="opcion4">B</option>
+    <option value="opcion5">NA</option>
+</select></td>
+<td><select class="form-select" name="opciones">
+    <option value="opcion1">Estatus</option>
+    <option value="opcion2">X</option>
+    <option value="opcion3">R</option>
+    <option value="opcion4">B</option>
+    <option value="opcion5">NA</option>
+</select></td>
+<td><select class="form-select" name="opciones">
+    <option value="opcion1">Estatus</option>
+    <option value="opcion2">X</option>
+    <option value="opcion3">R</option>
+    <option value="opcion4">B</option>
+    <option value="opcion5">NA</option>
+</select></td>
+<td class="merged" rowspan="1" colspan="2"><input type="text" class="input-observaciones " title="Ingresa Observaciones"></td>
+</tr>
+<tr>
+<td>3</td>
+<td><input type="text" class="input-capacidad " title="Ingresa Capacidad"></td>
+<td class="merged" rowspan="1" colspan="2"><input type="text" class="input-area " title="Ingresa Área"></td>
+<td><input type="text" class="input-agente" title="Ingresa Agente"></td>
+<td><input type="text" class="input-numeral " title="Ingresa Numeral"></td>
+<td><select class="form-select" name="opciones">
+    <option value="opcion1">Estatus</option>
+    <option value="opcion2">X</option>
+    <option value="opcion3">R</option>
+    <option value="opcion4">B</option>
+    <option value="opcion5">NA</option>
+</select></td>
+<td><select class="form-select" name="opciones">
+    <option value="opcion1">Estatus</option>
+    <option value="opcion2">X</option>
+    <option value="opcion3">R</option>
+    <option value="opcion4">B</option>
+    <option value="opcion5">NA</option>
+</select></td>
+<td><select class="form-select" name="opciones">
+    <option value="opcion1">Estatus</option>
+    <option value="opcion2">X</option>
+    <option value="opcion3">R</option>
+    <option value="opcion4">B</option>
+    <option value="opcion5">NA</option>
+</select></td>
+<td><select class="form-select" name="opciones">
+    <option value="opcion1">Estatus</option>
+    <option value="opcion2">X</option>
+    <option value="opcion3">R</option>
+    <option value="opcion4">B</option>
+    <option value="opcion5">NA</option>
+</select></td>
+<td><select class="form-select" name="opciones">
+    <option value="opcion1">Estatus</option>
+    <option value="opcion2">X</option>
+    <option value="opcion3">R</option>
+    <option value="opcion4">B</option>
+    <option value="opcion5">NA</option>
+</select></td>
+<td><select class="form-select" name="opciones">
+    <option value="opcion1">Estatus</option>
+    <option value="opcion2">X</option>
+    <option value="opcion3">R</option>
+    <option value="opcion4">B</option>
+    <option value="opcion5">NA</option>
+</select></td>
+<td><select class="form-select" name="opciones">
+    <option value="opcion1">Estatus</option>
+    <option value="opcion2">X</option>
+    <option value="opcion3">R</option>
+    <option value="opcion4">B</option>
+    <option value="opcion5">NA</option>
+</select></td>
+<td><input type="date" class="input-date" placeholder="Ingresa Fecha"></td>
+<td><input type="date" class="input-date" placeholder="Ingresa Fecha"></td>
+<td><select class="form-select" name="opciones">
+    <option value="opcion1">Estatus</option>
+    <option value="opcion2">X</option>
+    <option value="opcion3">R</option>
+    <option value="opcion4">B</option>
+    <option value="opcion5">NA</option>
+</select></td>
+<td><select class="form-select" name="opciones">
+    <option value="opcion1">Estatus</option>
+    <option value="opcion2">X</option>
+    <option value="opcion3">R</option>
+    <option value="opcion4">B</option>
+    <option value="opcion5">NA</option>
+</select></td>
+<td><select class="form-select" name="opciones">
+    <option value="opcion1">Estatus</option>
+    <option value="opcion2">X</option>
+    <option value="opcion3">R</option>
+    <option value="opcion4">B</option>
+    <option value="opcion5">NA</option>
+</select></td>
+<td><select class="form-select" name="opciones">
+    <option value="opcion1">Estatus</option>
+    <option value="opcion2">X</option>
+    <option value="opcion3">R</option>
+    <option value="opcion4">B</option>
+    <option value="opcion5">NA</option>
+</select></td>
+<td><select class="form-select" name="opciones">
+    <option value="opcion1">Estatus</option>
+    <option value="opcion2">X</option>
+    <option value="opcion3">R</option>
+    <option value="opcion4">B</option>
+    <option value="opcion5">NA</option>
+</select></td>
+<td><select class="form-select" name="opciones">
+    <option value="opcion1">Estatus</option>
+    <option value="opcion2">X</option>
+    <option value="opcion3">R</option>
+    <option value="opcion4">B</option>
+    <option value="opcion5">NA</option>
+</select></td>
+<td><select class="form-select" name="opciones">
+    <option value="opcion1">Estatus</option>
+    <option value="opcion2">X</option>
+    <option value="opcion3">R</option>
+    <option value="opcion4">B</option>
+    <option value="opcion5">NA</option>
+</select></td>
+<td><select class="form-select" name="opciones">
+    <option value="opcion1">Estatus</option>
+    <option value="opcion2">X</option>
+    <option value="opcion3">R</option>
+    <option value="opcion4">B</option>
+    <option value="opcion5">NA</option>
+</select></td>
+<td><select class="form-select" name="opciones">
+    <option value="opcion1">Estatus</option>
+    <option value="opcion2">X</option>
+    <option value="opcion3">R</option>
+    <option value="opcion4">B</option>
+    <option value="opcion5">NA</option>
+</select></td>
+<td><select class="form-select" name="opciones">
+    <option value="opcion1">Estatus</option>
+    <option value="opcion2">X</option>
+    <option value="opcion3">R</option>
+    <option value="opcion4">B</option>
+    <option value="opcion5">NA</option>
+</select></td>
+<td class="merged" rowspan="1" colspan="2"><input type="text" class="input-observaciones " title="Ingresa Observaciones"></td>
+</tr>
+<tr>
+<td>4</td>
+<td><input type="text" class="input-capacidad " title="Ingresa Capacidad"></td>
+<td class="merged" rowspan="1" colspan="2"><input type="text" class="input-area " title="Ingresa Área"></td>
+<td><input type="text" class="input-agente " title="Ingresa Agente"></td>
+<td><input type="text" class="input-numeral " title="Ingresa Numeral"></td>
+<td><select class="form-select" name="opciones">
+    <option value="opcion1">Estatus</option>
+    <option value="opcion2">X</option>
+    <option value="opcion3">R</option>
+    <option value="opcion4">B</option>
+    <option value="opcion5">NA</option>
+</select></td>
+<td><select class="form-select" name="opciones">
+    <option value="opcion1">Estatus</option>
+    <option value="opcion2">X</option>
+    <option value="opcion3">R</option>
+    <option value="opcion4">B</option>
+    <option value="opcion5">NA</option>
+</select></td>
+<td><select class="form-select" name="opciones">
+    <option value="opcion1">Estatus</option>
+    <option value="opcion2">X</option>
+    <option value="opcion3">R</option>
+    <option value="opcion4">B</option>
+    <option value="opcion5">NA</option>
+</select></td>
+<td><select class="form-select" name="opciones">
+    <option value="opcion1">Estatus</option>
+    <option value="opcion2">X</option>
+    <option value="opcion3">R</option>
+    <option value="opcion4">B</option>
+    <option value="opcion5">NA</option>
+</select></td>
+<td><select class="form-select" name="opciones">
+    <option value="opcion1">Estatus</option>
+    <option value="opcion2">X</option>
+    <option value="opcion3">R</option>
+    <option value="opcion4">B</option>
+    <option value="opcion5">NA</option>
+</select></td>
+<td><select class="form-select" name="opciones">
+    <option value="opcion1">Estatus</option>
+    <option value="opcion2">X</option>
+    <option value="opcion3">R</option>
+    <option value="opcion4">B</option>
+    <option value="opcion5">NA</option>
+</select></td>
+<td><select class="form-select" name="opciones">
+    <option value="opcion1">Estatus</option>
+    <option value="opcion2">X</option>
+    <option value="opcion3">R</option>
+    <option value="opcion4">B</option>
+    <option value="opcion5">NA</option>
+</select></td>
+<td><input type="date" class="input-date" placeholder="Ingresa Fecha"></td>
+<td><input type="date" class="input-date" placeholder="Ingresa Fecha"></td>
+<td><select class="form-select" name="opciones">
+    <option value="opcion1">Estatus</option>
+    <option value="opcion2">X</option>
+    <option value="opcion3">R</option>
+    <option value="opcion4">B</option>
+    <option value="opcion5">NA</option>
+</select></td>
+<td><select class="form-select" name="opciones">
+    <option value="opcion1">Estatus</option>
+    <option value="opcion2">X</option>
+    <option value="opcion3">R</option>
+    <option value="opcion4">B</option>
+    <option value="opcion5">NA</option>
+</select></td>
+<td><select class="form-select" name="opciones">
+    <option value="opcion1">Estatus</option>
+    <option value="opcion2">X</option>
+    <option value="opcion3">R</option>
+    <option value="opcion4">B</option>
+    <option value="opcion5">NA</option>
+</select></td>
+<td><select class="form-select" name="opciones">
+    <option value="opcion1">Estatus</option>
+    <option value="opcion2">X</option>
+    <option value="opcion3">R</option>
+    <option value="opcion4">B</option>
+    <option value="opcion5">NA</option>
+</select></td>
+<td><select class="form-select" name="opciones">
+    <option value="opcion1">Estatus</option>
+    <option value="opcion2">X</option>
+    <option value="opcion3">R</option>
+    <option value="opcion4">B</option>
+    <option value="opcion5">NA</option>
+</select></td>
+<td><select class="form-select" name="opciones">
+    <option value="opcion1">Estatus</option>
+    <option value="opcion2">X</option>
+    <option value="opcion3">R</option>
+    <option value="opcion4">B</option>
+    <option value="opcion5">NA</option>
+</select></td>
+<td><select class="form-select" name="opciones">
+    <option value="opcion1">Estatus</option>
+    <option value="opcion2">X</option>
+    <option value="opcion3">R</option>
+    <option value="opcion4">B</option>
+    <option value="opcion5">NA</option>
+</select></td>
+<td><select class="form-select" name="opciones">
+    <option value="opcion1">Estatus</option>
+    <option value="opcion2">X</option>
+    <option value="opcion3">R</option>
+    <option value="opcion4">B</option>
+    <option value="opcion5">NA</option>
+</select></td>
+<td><select class="form-select" name="opciones">
+    <option value="opcion1">Estatus</option>
+    <option value="opcion2">X</option>
+    <option value="opcion3">R</option>
+    <option value="opcion4">B</option>
+    <option value="opcion5">NA</option>
+</select></td>
+<td><select class="form-select" name="opciones">
+    <option value="opcion1">Estatus</option>
+    <option value="opcion2">X</option>
+    <option value="opcion3">R</option>
+    <option value="opcion4">B</option>
+    <option value="opcion5">NA</option>
+</select></td>
+<td class="merged" rowspan="1" colspan="2"><input type="text" class="input-observaciones " title="Ingresa Observaciones"></td>
+</tr>
+<tr>
+<td>5</td>
+<td><input type="text" class="input-capacidad " title="Ingresa Capacidad"></td>
+<td class="merged" rowspan="1" colspan="2"><input type="text" class="input-area " title="Ingresa Área"></td>
+<td><input type="text" class="input-agente " title="Ingresa Agente"></td>
+<td><input type="text" class="input-numeral " title="Ingresa Numeral"></td>
+<td><select class="form-select" name="opciones">
+    <option value="opcion1">Estatus</option>
+    <option value="opcion2">X</option>
+    <option value="opcion3">R</option>
+    <option value="opcion4">B</option>
+    <option value="opcion5">NA</option>
+</select></td>
+<td><select class="form-select" name="opciones">
+    <option value="opcion1">Estatus</option>
+    <option value="opcion2">X</option>
+    <option value="opcion3">R</option>
+    <option value="opcion4">B</option>
+    <option value="opcion5">NA</option>
+</select></td>
+<td><select class="form-select" name="opciones">
+    <option value="opcion1">Estatus</option>
+    <option value="opcion2">X</option>
+    <option value="opcion3">R</option>
+    <option value="opcion4">B</option>
+    <option value="opcion5">NA</option>
+</select></td>
+<td><select class="form-select" name="opciones">
+    <option value="opcion1">Estatus</option>
+    <option value="opcion2">X</option>
+    <option value="opcion3">R</option>
+    <option value="opcion4">B</option>
+    <option value="opcion5">NA</option>
+</select></td>
+<td><select class="form-select" name="opciones">
+    <option value="opcion1">Estatus</option>
+    <option value="opcion2">X</option>
+    <option value="opcion3">R</option>
+    <option value="opcion4">B</option>
+    <option value="opcion5">NA</option>
+</select></td>
+<td><select class="form-select" name="opciones">
+    <option value="opcion1">Estatus</option>
+    <option value="opcion2">X</option>
+    <option value="opcion3">R</option>
+    <option value="opcion4">B</option>
+    <option value="opcion5">NA</option>
+</select></td>
+<td><select class="form-select" name="opciones">
+    <option value="opcion1">Estatus</option>
+    <option value="opcion2">X</option>
+    <option value="opcion3">R</option>
+    <option value="opcion4">B</option>
+    <option value="opcion5">NA</option>
+</select></td>
+<td><input type="date" class="input-date" placeholder="Ingresa Fecha"></td>
+<td><input type="date" class="input-date" placeholder="Ingresa Fecha"></td>
+<td><select class="form-select" name="opciones">
+    <option value="opcion1">Estatus</option>
+    <option value="opcion2">X</option>
+    <option value="opcion3">R</option>
+    <option value="opcion4">B</option>
+    <option value="opcion5">NA</option>
+</select></td>
+<td><select class="form-select" name="opciones">
+    <option value="opcion1">Estatus</option>
+    <option value="opcion2">X</option>
+    <option value="opcion3">R</option>
+    <option value="opcion4">B</option>
+    <option value="opcion5">NA</option>
+</select></td>
+<td><select class="form-select" name="opciones">
+    <option value="opcion1">Estatus</option>
+    <option value="opcion2">X</option>
+    <option value="opcion3">R</option>
+    <option value="opcion4">B</option>
+    <option value="opcion5">NA</option>
+</select></td>
+<td><select class="form-select" name="opciones">
+    <option value="opcion1">Estatus</option>
+    <option value="opcion2">X</option>
+    <option value="opcion3">R</option>
+    <option value="opcion4">B</option>
+    <option value="opcion5">NA</option>
+</select></td>
+<td><select class="form-select" name="opciones">
+    <option value="opcion1">Estatus</option>
+    <option value="opcion2">X</option>
+    <option value="opcion3">R</option>
+    <option value="opcion4">B</option>
+    <option value="opcion5">NA</option>
+</select></td>
+<td><select class="form-select" name="opciones">
+    <option value="opcion1">Estatus</option>
+    <option value="opcion2">X</option>
+    <option value="opcion3">R</option>
+    <option value="opcion4">B</option>
+    <option value="opcion5">NA</option>
+</select></td>
+<td><select class="form-select" name="opciones">
+    <option value="opcion1">Estatus</option>
+    <option value="opcion2">X</option>
+    <option value="opcion3">R</option>
+    <option value="opcion4">B</option>
+    <option value="opcion5">NA</option>
+</select></td>
+<td><select class="form-select" name="opciones">
+    <option value="opcion1">Estatus</option>
+    <option value="opcion2">X</option>
+    <option value="opcion3">R</option>
+    <option value="opcion4">B</option>
+    <option value="opcion5">NA</option>
+</select></td>
+<td><select class="form-select" name="opciones">
+    <option value="opcion1">Estatus</option>
+    <option value="opcion2">X</option>
+    <option value="opcion3">R</option>
+    <option value="opcion4">B</option>
+    <option value="opcion5">NA</option>
+</select></td>
+<td><select class="form-select" name="opciones">
+    <option value="opcion1">Estatus</option>
+    <option value="opcion2">X</option>
+    <option value="opcion3">R</option>
+    <option value="opcion4">B</option>
+    <option value="opcion5">NA</option>
+</select></td>
+<td class="merged" rowspan="1" colspan="2"><input type="text" class="input-observaciones " title="Ingresa Observaciones"></td>
+</tr>
+<tr>
+<td>6</td>
+<td><input type="text" class="input-capacidad " title="Ingresa Capacidad"></td>
+<td class="merged" rowspan="1" colspan="2"><input type="text" class="input-area " title="Ingresa Área"></td>
+<td><input type="text" class="input-agente " title="Ingresa Agente"></td>
+<td><input type="text" class="input-numeral " title="Ingresa Numeral"></td>
+<td><select class="form-select" name="opciones">
+    <option value="opcion1">Estatus</option>
+    <option value="opcion2">X</option>
+    <option value="opcion3">R</option>
+    <option value="opcion4">B</option>
+    <option value="opcion5">NA</option>
+</select></td>
+<td><select class="form-select" name="opciones">
+    <option value="opcion1">Estatus</option>
+    <option value="opcion2">X</option>
+    <option value="opcion3">R</option>
+    <option value="opcion4">B</option>
+    <option value="opcion5">NA</option>
+</select></td>
+<td><select class="form-select" name="opciones">
+    <option value="opcion1">Estatus</option>
+    <option value="opcion2">X</option>
+    <option value="opcion3">R</option>
+    <option value="opcion4">B</option>
+    <option value="opcion5">NA</option>
+</select></td>
+<td><select class="form-select" name="opciones">
+    <option value="opcion1">Estatus</option>
+    <option value="opcion2">X</option>
+    <option value="opcion3">R</option>
+    <option value="opcion4">B</option>
+    <option value="opcion5">NA</option>
+</select></td>
+<td><select class="form-select" name="opciones">
+    <option value="opcion1">Estatus</option>
+    <option value="opcion2">X</option>
+    <option value="opcion3">R</option>
+    <option value="opcion4">B</option>
+    <option value="opcion5">NA</option>
+</select></td>
+<td><select class="form-select" name="opciones">
+    <option value="opcion1">Estatus</option>
+    <option value="opcion2">X</option>
+    <option value="opcion3">R</option>
+    <option value="opcion4">B</option>
+    <option value="opcion5">NA</option>
+</select></td>
+<td><select class="form-select" name="opciones">
+    <option value="opcion1">Estatus</option>
+    <option value="opcion2">X</option>
+    <option value="opcion3">R</option>
+    <option value="opcion4">B</option>
+    <option value="opcion5">NA</option>
+</select></td>
+<td><input type="date" class="input-date" placeholder="Ingresa Fecha"></td>
+<td><input type="date" class="input-date" placeholder="Ingresa Fecha"></td>
+<td><select class="form-select" name="opciones">
+    <option value="opcion1">Estatus</option>
+    <option value="opcion2">X</option>
+    <option value="opcion3">R</option>
+    <option value="opcion4">B</option>
+    <option value="opcion5">NA</option>
+</select></td>
+<td><select class="form-select" name="opciones">
+    <option value="opcion1">Estatus</option>
+    <option value="opcion2">X</option>
+    <option value="opcion3">R</option>
+    <option value="opcion4">B</option>
+    <option value="opcion5">NA</option>
+</select></td>
+<td><select class="form-select" name="opciones">
+    <option value="opcion1">Estatus</option>
+    <option value="opcion2">X</option>
+    <option value="opcion3">R</option>
+    <option value="opcion4">B</option>
+    <option value="opcion5">NA</option>
+</select></td>
+<td><select class="form-select" name="opciones">
+    <option value="opcion1">Estatus</option>
+    <option value="opcion2">X</option>
+    <option value="opcion3">R</option>
+    <option value="opcion4">B</option>
+    <option value="opcion5">NA</option>
+</select></td>
+<td><select class="form-select" name="opciones">
+    <option value="opcion1">Estatus</option>
+    <option value="opcion2">X</option>
+    <option value="opcion3">R</option>
+    <option value="opcion4">B</option>
+    <option value="opcion5">NA</option>
+</select></td>
+<td><select class="form-select" name="opciones">
+    <option value="opcion1">Estatus</option>
+    <option value="opcion2">X</option>
+    <option value="opcion3">R</option>
+    <option value="opcion4">B</option>
+    <option value="opcion5">NA</option>
+</select></td>
+<td><select class="form-select" name="opciones">
+    <option value="opcion1">Estatus</option>
+    <option value="opcion2">X</option>
+    <option value="opcion3">R</option>
+    <option value="opcion4">B</option>
+    <option value="opcion5">NA</option>
+</select></td>
+<td><select class="form-select" name="opciones">
+    <option value="opcion1">Estatus</option>
+    <option value="opcion2">X</option>
+    <option value="opcion3">R</option>
+    <option value="opcion4">B</option>
+    <option value="opcion5">NA</option>
+</select></td>
+<td><select class="form-select" name="opciones">
+    <option value="opcion1">Estatus</option>
+    <option value="opcion2">X</option>
+    <option value="opcion3">R</option>
+    <option value="opcion4">B</option>
+    <option value="opcion5">NA</option>
+</select></td>
+<td><select class="form-select" name="opciones">
+    <option value="opcion1">Estatus</option>
+    <option value="opcion2">X</option>
+    <option value="opcion3">R</option>
+    <option value="opcion4">B</option>
+    <option value="opcion5">NA</option>
+</select></td>
+<td class="merged" rowspan="1" colspan="2"><input type="text" class="input-observaciones " title="Ingresa Observaciones"></td>
+<td></td>
+</tr>
+<tr>
+<td>7</td>
+<td><input type="text" class="input-capacidad " title="Ingresa Capacidad"></td>
+<td class="merged" rowspan="1" colspan="2"><input type="text" class="input-area " title="Ingresa Área"></td>
+<td><input type="text" class="input-agente " title="Ingresa Agente"></td>
+<td><input type="text" class="input-numeral " title="Ingresa Numeral"></td>
+<td><select class="form-select" name="opciones">
+    <option value="opcion1">Estatus</option>
+    <option value="opcion2">X</option>
+    <option value="opcion3">R</option>
+    <option value="opcion4">B</option>
+    <option value="opcion5">NA</option>
+</select></td>
+<td><select class="form-select" name="opciones">
+    <option value="opcion1">Estatus</option>
+    <option value="opcion2">X</option>
+    <option value="opcion3">R</option>
+    <option value="opcion4">B</option>
+    <option value="opcion5">NA</option>
+</select></td>
+<td><select class="form-select" name="opciones">
+    <option value="opcion1">Estatus</option>
+    <option value="opcion2">X</option>
+    <option value="opcion3">R</option>
+    <option value="opcion4">B</option>
+    <option value="opcion5">NA</option>
+</select></td>
+<td><select class="form-select" name="opciones">
+    <option value="opcion1">Estatus</option>
+    <option value="opcion2">X</option>
+    <option value="opcion3">R</option>
+    <option value="opcion4">B</option>
+    <option value="opcion5">NA</option>
+</select></td>
+<td><select class="form-select" name="opciones">
+    <option value="opcion1">Estatus</option>
+    <option value="opcion2">X</option>
+    <option value="opcion3">R</option>
+    <option value="opcion4">B</option>
+    <option value="opcion5">NA</option>
+</select></td>
+<td><select class="form-select" name="opciones">
+    <option value="opcion1">Estatus</option>
+    <option value="opcion2">X</option>
+    <option value="opcion3">R</option>
+    <option value="opcion4">B</option>
+    <option value="opcion5">NA</option>
+</select></td>
+<td><select class="form-select" name="opciones">
+    <option value="opcion1">Estatus</option>
+    <option value="opcion2">X</option>
+    <option value="opcion3">R</option>
+    <option value="opcion4">B</option>
+    <option value="opcion5">NA</option>
+</select></td>
+<td><input type="date" class="input-date" placeholder="Ingresa Fecha"></td>
+<td><input type="date" class="input-date" placeholder="Ingresa Fecha"></td>
+<td><select class="form-select" name="opciones">
+    <option value="opcion1">Estatus</option>
+    <option value="opcion2">X</option>
+    <option value="opcion3">R</option>
+    <option value="opcion4">B</option>
+    <option value="opcion5">NA</option>
+</select></td>
+<td><select class="form-select" name="opciones">
+    <option value="opcion1">Estatus</option>
+    <option value="opcion2">X</option>
+    <option value="opcion3">R</option>
+    <option value="opcion4">B</option>
+    <option value="opcion5">NA</option>
+</select></td>
+<td><select class="form-select" name="opciones">
+    <option value="opcion1">Estatus</option>
+    <option value="opcion2">X</option>
+    <option value="opcion3">R</option>
+    <option value="opcion4">B</option>
+    <option value="opcion5">NA</option>
+</select></td>
+<td><select class="form-select" name="opciones">
+    <option value="opcion1">Estatus</option>
+    <option value="opcion2">X</option>
+    <option value="opcion3">R</option>
+    <option value="opcion4">B</option>
+    <option value="opcion5">NA</option>
+</select></td>
+<td><select class="form-select" name="opciones">
+    <option value="opcion1">Estatus</option>
+    <option value="opcion2">X</option>
+    <option value="opcion3">R</option>
+    <option value="opcion4">B</option>
+    <option value="opcion5">NA</option>
+</select></td>
+<td><select class="form-select" name="opciones">
+    <option value="opcion1">Estatus</option>
+    <option value="opcion2">X</option>
+    <option value="opcion3">R</option>
+    <option value="opcion4">B</option>
+    <option value="opcion5">NA</option>
+</select></td>
+<td><select class="form-select" name="opciones">
+    <option value="opcion1">Estatus</option>
+    <option value="opcion2">X</option>
+    <option value="opcion3">R</option>
+    <option value="opcion4">B</option>
+    <option value="opcion5">NA</option>
+</select></td>
+<td><select class="form-select" name="opciones">
+    <option value="opcion1">Estatus</option>
+    <option value="opcion2">X</option>
+    <option value="opcion3">R</option>
+    <option value="opcion4">B</option>
+    <option value="opcion5">NA</option>
+</select></td>
+<td><select class="form-select" name="opciones">
+    <option value="opcion1">Estatus</option>
+    <option value="opcion2">X</option>
+    <option value="opcion3">R</option>
+    <option value="opcion4">B</option>
+    <option value="opcion5">NA</option>
+</select></td>
+<td><select class="form-select" name="opciones">
+    <option value="opcion1">Estatus</option>
+    <option value="opcion2">X</option>
+    <option value="opcion3">R</option>
+    <option value="opcion4">B</option>
+    <option value="opcion5">NA</option>
+</select></td>
+<td class="merged" rowspan="1" colspan="2"><input type="text" class="input-observaciones " title="Ingresa Observaciones"></td>
+</tr>
+<tr>
+    <td></td>
+</tr>
+<tr>
+<td>Nota: Todos los incumplimientos a la Normatividad vigente se debe realizar Formato 13 en SISST.</td>
+</tr>
+<tr>
+            <td></td>
+            <td class="merged" rowspan="1" colspan="5">
+                USUARIO DEL VEHÍCULO OFICIAL FIRMA:
+                <canvas id="signatureCanvas" width="200" height="100"></canvas>
+                <div>
+                    <button type="button" onclick="clearCanvas('signatureCanvas')">Limpiar</button>
+                    <button type="button" onclick="downloadSignature('signatureCanvas')">Descargar Firma</button>
+                </div>
+            </td>
+            <td class="merged" rowspan="1" colspan="6">
+                ADMINISTRADOR DE PV FIRMA Y RPE:
+                <canvas id="adminSignatureCanvas" width="200" height="100"></canvas>
+                <div>
+                    <button type="button" onclick="clearCanvas('adminSignatureCanvas')">Limpiar</button>
+                    <button type="button" onclick="downloadSignature('adminSignatureCanvas')">Descargar Firma</button>
+                </div>
+                <input type="text" class="border p-1 mt-2" placeholder="Ingresa RPE" value="Lic. Noemí Guadalupe Chan Couoh - GEYK8">
+            </td>
+            <td class="merged" rowspan="1" colspan="6">
+                ADMINISTRADOR DE PV FIRMA Y RPE:
+                <canvas id="admin2SignatureCanvas" width="200" height="100"></canvas>
+                <div>
+                    <button type="button" onclick="clearCanvas('adminSignatureCanvas')">Limpiar</button>
+                    <button type="button" onclick="downloadSignature('adminSignatureCanvas')">Descargar Firma</button>
+                </div>
+                <input type="text" class="border p-1 mt-2" placeholder="Ingresa RPE" value="Lic. Noemí Guadalupe Chan Couoh - GEYK8">
+            </td>
+            <td class="merged" rowspan="1" colspan="6">
+                ADMINISTRADOR DE PV FIRMA Y RPE:
+                <canvas id="admin3SignatureCanvas" width="200" height="100"></canvas>
+                <div>
+                    <button type="button" onclick="clearCanvas('adminSignatureCanvas')">Limpiar</button>
+                    <button type="button" onclick="downloadSignature('adminSignatureCanvas')">Descargar Firma</button>
+                </div>
+                <input type="text" class="border p-1 mt-2" placeholder="Ingresa RPE" value="Lic. Noemí Guadalupe Chan Couoh - GEYK8">
+            </td>
+        </tr>
+</table>
+</div>
+<script>
+// Función para generar el PDF
+function generarPDF() {
+  const tabla = document.getElementById('hola');
+  const opt = {
+    margin: [0.5, 0.5, 0.5, 0.5],
+    filename: 'tabla-Indicadores.pdf',
+    image: { type: 'jpeg', quality: 0.98 },
+    html2canvas: {
+      scale: 3,
+      useCORS: true,
+      scrollY: 0
+    },
+    jsPDF: {
+      unit: 'in',
+      format: 'a2',
+      orientation: 'landscape'
+    },
+    pagebreak: {
+      mode: ['avoid-all', 'css', 'legacy']
+    }
+  };
+  html2pdf().set(opt).from(tabla).save();
+}
+// Añadir botón para generar PDF (opcional)
+document.addEventListener('DOMContentLoaded', function() {
+  const btn = document.createElement('button');
+  btn.textContent = 'Descargar PDF';
+  btn.style.position = 'fixed';
+  btn.style.bottom = '20px';
+  btn.style.right = '20px';
+  btn.style.padding = '10px';
+  btn.style.backgroundColor = '#4CAF50';
+  btn.style.color = 'white';
+  btn.style.border = 'none';
+  btn.style.borderRadius = '4px';
+  btn.style.cursor = 'pointer';
+  btn.onclick = generarPDF;
+  document.body.appendChild(btn);
+});
+
+
+
+///FIRMAS
+// Funcionalidad de dibujo en el canvas
+    let isDrawing = false;
+    let lastX = 0;
+    let lastY = 0;
+
+    function startDrawing(e, canvasId) {
+        isDrawing = true;
+        [lastX, lastY] = getMousePos(e, canvasId);
+    }
+
+    function draw(e, canvasId) {
+        if (!isDrawing) return;
+
+        const canvas = document.getElementById(canvasId);
+        const ctx = canvas.getContext('2d');
+        const [x, y] = getMousePos(e, canvasId);
+
+        ctx.beginPath();
+        ctx.moveTo(lastX, lastY);
+        ctx.lineTo(x, y);
+        ctx.strokeStyle = '#000';
+        ctx.lineWidth = 2;
+        ctx.lineCap = 'round';
+        ctx.stroke();
+
+        [lastX, lastY] = [x, y];
+    }
+
+    function stopDrawing() {
+        isDrawing = false;
+    }
+
+    function getMousePos(e, canvasId) {
+        const canvas = document.getElementById(canvasId);
+        const rect = canvas.getBoundingClientRect();
+        const clientX = e.clientX || (e.touches && e.touches[0].clientX);
+        const clientY = e.clientY || (e.touches && e.touches[0].clientY);
+        return [
+            (clientX - rect.left) * (canvas.width / rect.width),
+            (clientY - rect.top) * (canvas.height / rect.height)
+        ];
+    }
+
+    function clearCanvas(canvasId) {
+        const canvas = document.getElementById(canvasId);
+        const ctx = canvas.getContext('2d');
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+    }
+
+    function downloadSignature(canvasId) {
+        const canvas = document.getElementById(canvasId);
+        const link = document.createElement('a');
+        link.download = canvasId === 'signatureCanvas' ? 'firma_usuario.png' : canvasId === 'adminSignatureCanvas' ? 'firma_admin.png' : 'firma_revisor.png';
+        link.href = canvas.toDataURL('image/png');
+        link.click();
+    }
+
+
+     // Configurar eventos del canvas
+        const canvases = ['signatureCanvas', 'adminSignatureCanvas', 'admin3SignatureCanvas','admin2SignatureCanvas'];
+        canvases.forEach(canvasId => {
+            const canvas = document.getElementById(canvasId);
+            if (canvas) {
+                canvas.addEventListener('mousedown', (e) => startDrawing(e, canvasId));
+                canvas.addEventListener('mousemove', (e) => draw(e, canvasId));
+                canvas.addEventListener('mouseup', stopDrawing);
+                canvas.addEventListener('mouseout', stopDrawing);
+
+                // Soporte para dispositivos táctiles
+                canvas.addEventListener('touchstart', (e) => {
+                    e.preventDefault();
+                    startDrawing(e, canvasId);
+                });
+                canvas.addEventListener('touchmove', (e) => {
+                    e.preventDefault();
+                    draw(e, canvasId);
+                });
+                canvas.addEventListener('touchend', stopDrawing);
+            }
+        });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</body>
+</html>

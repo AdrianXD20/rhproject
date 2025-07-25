@@ -3,10 +3,10 @@ from openpyxl.utils import get_column_letter
 import html
 
 # Nombre del archivo Excel de entrada (cámbialo según tu archivo)
-input_file = "inut2.xlsx"
+input_file = "input.xlsx"
 
 # Nombre del archivo HTML de salida
-output_file = "inut2.html"
+output_file = "extintores2.html"
 
 def excel_to_html(input_file, output_file):
     try:
