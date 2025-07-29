@@ -13,10 +13,26 @@ th { background-color: #fffefe; font-weight: bold; }
 .clickable:hover { background-color: #f0f0f0; }
 .selected-check { color: green; font-weight: bold; }
 .selected-cross { color: red; font-weight: bold; }
+#signatureCanvas, #adminSignatureCanvas, #reviewerSignatureCanvas {
+            border: 1px solid #434242;
+            background-color: #fff;
+            border-radius: 4px;
+        }
+        button {
+            margin-top: 5px;
+            padding: 5px 10px;
+            background-color: #f0f0f0;
+            border: 1px solid #434242;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #e0e0e0;
+        }
 </style>
 </head>
 <body class="p-4 font-sans bg-gray-100">
-<div id="formContent" class="max-w-3xl mx-auto bg-white p-4 shadow-md">
+<div id="hola" class="max-w-3xl mx-auto bg-white p-4 shadow-md">
 <table class="w-full mb-3 text-xs" id="inspectionTable">
 <tr>
 <td class="merged" rowspan="4" colspan="2"></td>
@@ -33,7 +49,7 @@ th { background-color: #fffefe; font-weight: bold; }
 <td>Mérida</td>
 <td class="merged" rowspan="1" colspan="3">CENTRO DE TRABAJO:</td>
 <td class="merged" rowspan="1" colspan="5"><input type="text" class="input-observaciones " title="Ingresa Centro de Trabajo"></td>
-<td>DIRECCIÓN:<input type="text" class="input-observaciones " title="Ingresa Direccion"</td>
+<td>DIRECCIÓN:<input type="text" class="input-observaciones " title="Ingresa Direccion"></td>
 <td></td>
 <td></td>
 <td></td>
@@ -270,17 +286,44 @@ th { background-color: #fffefe; font-weight: bold; }
 <tr>
 <td></td>
 <td class="merged" rowspan="1" colspan="4">NOMBRE DEL RESPONSABLE DE SEGURIDAD</td>
-<td class="merged" rowspan="1" colspan="10"></td>
+<td class="merged" rowspan="1" colspan="10"><input type="text" class="input-observaciones " title="Ingresa Direccion"></td>
 </tr>
 <tr>
 <td></td>
 <td class="merged" rowspan="1" colspan="4">NOMBRE DEL RESPONSABLE DEL CENTRO DE TRABAJO</td>
-<td class="merged" rowspan="1" colspan="10"></td>
+<td class="merged" rowspan="1" colspan="10"><input type="text" class="input-observaciones " title="Ingresa Direccion"></td>
 </tr>
 </table>
 </div>
 
+<button onclick="generarPDF()">Descargar</button>
+
 <script>
+/*DESARGA PDF*/
+function generarPDF() {
+  const tabla = document.getElementById('hola');
+  const opt = {
+    margin: [0.5, 0.5, 0.5, 0.5],
+    filename: 'tabla-Lamparas.pdf',
+    image: { type: 'jpeg', quality: 0.98 },
+    html2canvas: {
+      scale: 3,
+      useCORS: true,
+      scrollY: 0
+    },
+    jsPDF: {
+      unit: 'in',
+      format: 'a2',
+      orientation: 'landscape'
+    },
+    pagebreak: {
+      mode: ['avoid-all', 'css', 'legacy']
+    }
+  };
+  html2pdf().set(opt).from(tabla).save();
+}
+
+/*/*/
 document.addEventListener('DOMContentLoaded', function() {
     const clickableCells = document.querySelectorAll('.clickable');
     
